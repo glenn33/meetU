@@ -1,0 +1,7 @@
+<div class="container">
+ <h1>Hola</h1>
+ <% @events.each do |event| %>
+  <%= event.title %>
+  <%= link_to "Destroy this event", booking_path(event), method: :delete, data: { confirm: "Are you sure?"} %>
+ <% end %>
+</div>

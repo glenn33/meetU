@@ -1,2 +1,7 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<div class="container">
+ <h1>Hola</h1>
+ <% @bookings.each do |booking| %>
+  <%= booking.event.title %>
+  <%= link_to "Destroy this booking", booking_path(booking), method: :delete, data: { confirm: "Are you sure?"} %>
+ <% end %>
+</div>

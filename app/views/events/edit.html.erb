@@ -1,2 +1,14 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+
+<div class="container">
+	<%= simple_form_for @event do |f| %>
+  <%= f.input :title %>
+  <%= f.select :category_id, options_for_select(Category.all.map { |c| [ c.name, c.id ] }) %>
+  <%= f.input :date %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :pictures %>
+  <%= f.input :premium %>
+  <%= f.submit %>
+ <% end %>
+ 
+</div>

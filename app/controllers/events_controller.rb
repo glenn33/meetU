@@ -18,7 +18,6 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     if @event.save
       @event_org = EventOrganization.create(user_id: current_user.id, event_id: @event.id)
-      raise
       redirect_to event_path(@event)
     else
       render :new
@@ -52,6 +51,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :address, :title, :description, :pictures, :premium, :category_id)
+    params.require(:event).permit(:date, :address, :title, :description, :premium, :category_id, :pictures)
   end
 end

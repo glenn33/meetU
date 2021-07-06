@@ -4,13 +4,21 @@
   <% @events.each do |event| %>
     <%= link_to event_path(event) do %>
       <div class="card-trip">
+      <% if event.pictures.attached? %>
+        <%= cl_image_tag event.pictures.key %>
+      <% else %>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <% end %>
         <div class="card-trip-infos">
           <div>
             <h2 style="width: 165px;"><%= event.title %></h2>
             <p><%= event.category.name %></p>
           </div>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <% if event.user.profile_picture.attached? %>
+          <%= cl_image_tag event.user.profile_picture.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
             <p class="card-trip-pricing" style="width: 86px;  font-size: 15px;"><%= event.date %></p>
         </div>
       </div>
@@ -18,3 +26,4 @@
   <% end %>
   </div>
 </div>
+

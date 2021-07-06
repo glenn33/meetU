@@ -1,7 +1,26 @@
-<div class="container">
-  <h1><%= @event.title %></h1>
+<div class="avatars-book-container container d-flex justify-content-between my-5">
+  <div class="avatars-container">
+    <% @event.bookings.each do |booking| %>
+     <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+    <% end %>
+  </div>
   <%= simple_form_for [@event, @booking] do |f| %>
     <%= f.submit %>
   <% end %>
-  <%= link_to "Delete this event", event_path(@event), method: :delete, data: { confirm: "Are you sure?"} %>
 </div>
+
+<div class="container d-flex justify-content-between">
+  <div class="event-info">
+    <h1><%= @event.title %></h1>
+    <h2><%= @event.category.name  %></h2>
+    <p>Address: <%= @event.address %></p>
+    <p>Date: <%= @event.date %></p>
+  </div>
+  
+  <div class="event-description">
+  <h2>More about this event..</h2>
+  <p><%= @event.description %></p>
+  </div>
+</div>
+
+  <%# <%= link_to "Delete this event", event_path(@event), method: :delete, data: { confirm: "Are you sure?"} %>

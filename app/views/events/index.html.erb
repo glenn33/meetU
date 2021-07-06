@@ -1,7 +1,10 @@
 <div class="container">
-  <h1>Hola</h1>
+  <h1>Participate of our events for FREE</h1>
+  <ul>
   <% @events.each do |event| %>
-    <%= event.title %>
-    <%= link_to "See event", event_path(event) %>
+    <li><%= event.title %> | 
+    <%= link_to "See event", event_path(event) %></li>
   <% end %>
+  </ul>
 </div>
+

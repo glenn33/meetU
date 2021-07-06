@@ -1,5 +1,7 @@
 <div class="container">
-<h1><%= @event.title %></h1>
-<%= link_to "Book this event", event_book_path(@event) %>
-<%= link_to "Delete this event", event_path(@event), method: :delete, data: { confirm: "Are you sure?"} %>
+  <h1><%= @event.title %></h1>
+  <%= simple_form_for [@event, @booking] do |f| %>
+    <%= f.submit %>
+  <% end %>
+  <%= link_to "Delete this event", event_path(@event), method: :delete, data: { confirm: "Are you sure?"} %>
 </div>

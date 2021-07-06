@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   
-  def book
+  def create
     @booking = Booking.new(event_id: params[:event_id])
     @booking.user = current_user
     @booking.save

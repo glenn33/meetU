@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/my_events', to: 'events#my_events'
   resources :events do
-    get '/book', to: 'bookings#book'
+    resources :bookings, only: :create
   end
   resources :bookings, only: [:index, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

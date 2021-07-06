@@ -1,0 +1,128 @@
+// Cards index
+.card-trip {
+  border-radius: 8px;
+  color: #525252;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-right: 10px;
+  margin-top: 17px;
+}
+
+.card-trip > img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 18px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+.card-trip:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  background-color: white;
+ }
+
+
+// Card home
+.card-category {
+ background-size: cover;
+ background-position: center;
+ height: 180px;
+ width: 360px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ color: white;
+ font-size: 24px;
+ font-weight: bold;
+ text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+ border-radius: 5px;
+ box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ margin: 20px 10px;
+ &:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+  top: -4px;
+  border: 1px solid #cccccc;
+  background-color: white;
+ }
+}
+a:hover {
+ text-decoration: none;
+}
+
+// card bookings and my_events 
+.card img {
+  height: 212px;
+  width: 146px;
+  object-fit: cover;
+  border-radius: 6px;
+  padding-right: 0px;
+}
+.card {
+ display: block;
+ top: 0px;
+ position: relative;
+ max-width: 262px;
+ background-color: hsl(7, 45%, 92%);
+ border-radius: 4px;
+ padding: 20px 20px;
+ margin: 12px;
+ text-decoration: none;
+ z-index: 0;
+ overflow: hidden;
+ border: 1px solid #f2f8f9;
+
+ &:hover {
+   transition: all 0.2s ease-out;
+   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+   top: -4px;
+   border: 1px solid #cccccc;
+   background-color: white;
+ }
+
+ &:before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   top: -16px;
+   right: -16px;
+   background: #00838d;
+   height: 32px;
+   width: 32px;
+   border-radius: 32px;
+   transform: scale(2);
+   transform-origin: 50% 50%;
+   transition: transform 0.15s ease-out;
+ }
+
+ &:hover:before {
+   transform: scale(2.15);
+ }
+}

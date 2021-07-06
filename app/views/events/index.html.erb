@@ -1,10 +1,21 @@
-<div class="container">
-  <h1>Participate of our events for FREE</h1>
-  <ul>
+<div class="container mt-3">
+  <h1>All events</h1>
+  <div class="card-index">
   <% @events.each do |event| %>
-    <li><%= event.title %> | 
-    <%= link_to "See event", event_path(event) %></li>
+    <%= link_to event_path(event) do %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2 style="width: 165px;"><%= event.title %></h2>
+            <p><%= event.category.name %></p>
+          </div>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            <p class="card-trip-pricing" style="width: 86px;  font-size: 15px;"><%= event.date %></p>
+        </div>
+      </div>
+    <% end %>
   <% end %>
-  </ul>
+  </div>
 </div>
 

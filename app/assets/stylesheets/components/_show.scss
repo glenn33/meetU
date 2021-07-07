@@ -1,0 +1,38 @@
+.body-container {
+  background-color: white;
+  height: 430px;
+}
+.avatars-book-container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  .event-info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px rgb(162, 162, 162);
+    padding: 20px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 17px;
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+

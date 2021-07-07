@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :category
-  has_many :bookings
-  has_many :event_organizations
-  has_many_attached :pictures
+  belongs_to :user
+  has_many :bookings, dependent: :destroy
+  has_one_attached :pictures
 end

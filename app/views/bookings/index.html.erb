@@ -10,8 +10,9 @@
       <div class="card-body">
         <span class="tag mb-2"><%= booking.event.category.name %></span>
         <h4><%= booking.event.title %></h4>
-          <p><%= booking.event.description %></p>
-          <%= link_to "Destroy this booking", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
+        <p><%= booking.event.description %></p>
+        <p><%= booking.event.date %></p>
+        <%= link_to "Destroy this booking", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
       </div>
     </div>
   <% end %>

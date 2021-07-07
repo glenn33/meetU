@@ -1,7 +1,7 @@
 <div class="container">
   <h1>My events</h1>
   <% @events.each do |event| %>
-      <div class="events-card mb-3" style="max-width: 540px;">
+      <div class="events-card mb-3" style="max-width: 75%;">
         <div class="row g-0">
           <div class="col-md-4">
             <%= link_to event_path(event) do %>
@@ -10,10 +10,12 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title"><%= event.title %></h5>
-              <p class="card-text mb-0"><small class="text-muted">Pick up: <%= event.date %></small></p>
-              <div class="d-flex justify-content-between">         
-                <%= link_to "Delete event", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-je ml-5 justify-content-end" %>
+              <h2 class="card-title"><%= event.title %></h2>
+              <h4><%= event.description %></h4>
+              <h4 class="card-text"><small class="text-muted">Date: <%= event.date %></small></h4>
+              <div class="d-flex justify-content-between">
+                <%= link_to "Edit event", edit_event_path(event), id:"je", class:"btn btn-je mr-3", style:"background-color: gray;" %>
+                <%= link_to "Delete event", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-je" %>
               </div>
             </div>
           </div>
@@ -21,4 +23,3 @@
       </div>
   <% end %>
 </div>
-

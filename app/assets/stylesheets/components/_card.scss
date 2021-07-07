@@ -77,52 +77,100 @@ a:hover {
  text-decoration: none;
 }
 
-// card bookings and my_events 
-.card img {
-  height: 212px;
-  width: 146px;
-  object-fit: cover;
-  border-radius: 6px;
-  padding-right: 0px;
+// card my_rentals
+
+ .events-card {
+  display: block;
+  top: 0px;
+  position: relative;
+  max-width: 262px;
+  background-color: #c4e4db;
+  border-radius: 4px;
+  padding: 20px 20px;
+  margin: 12px;
+  margin-left: 0;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #f2f8f9;
+  .card-body {
+    padding-left: 0;
+  }
+  img {
+    height: 100%;
+    width: 146px;
+    object-fit: cover;
+    border-radius: 6px;
+    padding-right: 0px;
+  }
+  &:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #00838d;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+  &:hover:before {
+    transform: scale(2.15);
+  }
 }
-.card {
- display: block;
- top: 0px;
- position: relative;
- max-width: 262px;
- background-color: hsl(7, 45%, 92%);
- border-radius: 4px;
- padding: 20px 20px;
- margin: 12px;
- text-decoration: none;
- z-index: 0;
- overflow: hidden;
- border: 1px solid #f2f8f9;
 
- &:hover {
-   transition: all 0.2s ease-out;
-   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
-   top: -4px;
-   border: 1px solid #cccccc;
-   background-color: white;
- }
 
- &:before {
-   content: "";
-   position: absolute;
-   z-index: -1;
-   top: -16px;
-   right: -16px;
-   background: #00838d;
-   height: 32px;
-   width: 32px;
-   border-radius: 32px;
-   transform: scale(2);
-   transform-origin: 50% 50%;
-   transition: transform 0.15s ease-out;
- }
-
- &:hover:before {
-   transform: scale(2.15);
- }
+// card bookings
+.booking-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  a {
+  }
+  &:hover {
+    transition: all 0.2s cubic-bezier();
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+  }
+}
+.card-header {
+  padding: 0;
+}
+.card-header img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+.tag {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+  padding: 2px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.card-body p {
+  font-size: 13px;
 }

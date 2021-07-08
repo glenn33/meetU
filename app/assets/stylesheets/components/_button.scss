@@ -14,21 +14,20 @@
  }
  
  .btn-flat {
-  color: rgb(41, 41, 41);
-  font-size: 14px;
-  font-weight: bold;
-  padding: 5px 24px;
-  border-radius: 4px;
-  background: #e3e3e3;
-  transition: background 0.3s ease;
-  width: 14vw;
-  margin-bottom: 30px;
+  color: #ffffff;
+  padding: 9px 13px;
+  border-radius: 8px;
+  font-weight: normal;
+  transition: opacity 0.3s ease;
+  background-color: #0F9DAE;
+  margin-right: 15px;
+  &:hover {
+    opacity: 0.9;
+    color: #ffffff;
+   }
  }
  
- .btn-flat:hover {
-  background: #ffffff;
-  color: rgb(0, 0, 0);
- }
+
  
  .btn-gradient {
   color: white;
@@ -45,7 +44,7 @@
   color: white;
  }
  .btn-je {
-  font-size: 10px;
+  font-size: 15px;
   color: white;
   padding: 4px 8px;
   border-radius: 4px;
@@ -57,10 +56,10 @@
   }
  }
  #je {
-  font-size: 18px;
+  font-size: 15px;
   background-color: #646464;
   &:hover {
-   background: #3f3f3f;
+   background: #000000;
   color: white;
   }
  }

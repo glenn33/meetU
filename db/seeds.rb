@@ -27,41 +27,44 @@ user3 = user3.profile_picture.attach(io: file, filename: "face.jpg", content_typ
 
 puts "Creating categories"
 
-categories = ["Aire libre", "Deportes", "Grupos de estudio", "Hobbies"]
+Category.create(name: "Outdoor", picture: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+# file = URI.open() # use cloudinary url
+# category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
-categories.each do |category|
-  Category.create(name: category)
-end
+Category.create(name: "Study groups", picture: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=763&q=80")
+# file = URI.open() # use cloudinary url
+# category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+Category.create(name: "Sports", picture: "https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" )
+# file = URI.open() # use cloudinary url
+# category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+Category.create(name: "Hobbies", picture: "https://images.unsplash.com/photo-1621112904887-419379ce6824?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80")
+# file = URI.open() # use cloudinary url
+# category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+Category.create(name: "Politics", picture: "https://images.unsplash.com/photo-1508766917616-d22f3f1eea14?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
+# file = URI.open() # use cloudinary url
+# category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+Category.create(name: "Just fun", picture: "https://images.unsplash.com/photo-1583606784123-7c244f00d29c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
+# file = URI.open() # use cloudinary url
+# category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+
+
 
 puts "Creating events"
 
-event1 = Event.create(user_id: User.find_by(email: "santi@gmail.com").id, category_id: Category.find_by(name: "Aire libre").id, date: Date.today , address: "gran vía 55, madrid", title: "Salidas a correr por la montaña", premium: false, description: "Este finde salimos a correr por la montaña. Traer comida, abrigo y ganas de compartir un buen momento"  )
+event1 = Event.create(user_id: User.find_by(email: "santi@gmail.com").id, category_id: Category.find_by(name: "Outdoor").id, date: Date.today , address: "gran vía 55, madrid", title: "Salidas a correr por la montaña", premium: false, description: "Este finde salimos a correr por la montaña. Traer comida, abrigo y ganas de compartir un buen momento"  )
 file = URI.open("https://images.unsplash.com/photo-1506534067239-9e2fabb3a863?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") # use cloudinary url
 event1 = event1.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
-event2 = Event.create(user_id: User.find_by(email: "martin@gmail.com").id, category_id: Category.find_by(name: "Deportes").id, date: Date.today , address: "gran vía 55, madrid", title: "Para los amantes del voley!", premium: false, description: "Si te gusta el voley playero, esta es la actividad para vos. Sumate!"  )
+event2 = Event.create(user_id: User.find_by(email: "martin@gmail.com").id, category_id: Category.find_by(name: "Sports").id, date: Date.today , address: "gran vía 55, madrid", title: "Para los amantes del voley!", premium: false, description: "Si te gusta el voley playero, esta es la actividad para vos. Sumate!"  )
 file = URI.open("https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=868&q=80") # use cloudinary url
 event2 = event2.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
 
-event3 = Event.create(user_id: User.find_by(email: "glenn@gmail.com").id, category_id: Category.find_by(name: "Grupos de estudio").id, date: Date.today , address: "gran vía 55, madrid", title: "Grupo de estudio de Javascript", premium: false, description: "Hola!, somos un grupo de amigos que nos juntamos a estudiar javascript. Si te entusiasma, sos bienvenido!"  )
+event3 = Event.create(user_id: User.find_by(email: "glenn@gmail.com").id, category_id: Category.find_by(name: "Study groups").id, date: Date.today , address: "gran vía 55, madrid", title: "Grupo de estudio de Javascript", premium: false, description: "Hola!, somos un grupo de amigos que nos juntamos a estudiar javascript. Si te entusiasma, sos bienvenido!"  )
 file = URI.open("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") # use cloudinary url
 event3 = event3.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
-
-
-
-
-
-# _table "events", force: :cascade do |t|
-#   t.bigint "category_id", null: false
-#   t.bigint "user_id", null: false
-#   t.datetime "created_at", precision: 6, null: false
-#   t.datetime "updated_at", precision: 6, null: false
-#   t.date "date"
-#   t.string "address"
-#   t.string "title"
-#   t.text "description"
-#   t.string "pictures"
-#   t.boolean "premium"
-#   t.index ["category_id"], name: "index_events_on_category_id"
-#   t.index ["user_id"], name: "index_events_on_user_id"

@@ -14,14 +14,23 @@ class EventsController < ApplicationController
           lng: event.longitude
         }
       end
+  
     end
 
     if params[:search].present?
       @events = @events.search_by_title_and_description(params[:search])
     end
+    
+    if params[:format].present?
+      
+      @events = Event.joins(:category).where(categories: { name: params[:format] })
+
+    end
+    
+    
   end
 
-  def show
+  def show  
     @booking = Booking.new
   end
 

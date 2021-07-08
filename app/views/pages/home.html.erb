@@ -16,11 +16,22 @@
 <h2 class="text-center mt-3" style="color:rgb(7, 59, 76);">CATEGORIES</h2>
 
 <div class="container">
+  <div class="home-container w-50">
+    <% @categories.each do |category|  %>
+      <%= link_to events_path(category.name) do  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.picture  %>)"> 
+              <%= category.name %>
+            
+            </div>
+      <% end  %>
+    <% end %>
+  </div>
+</div>
+
+<%# <div class="container">
   <div class="row">
     <div class="cards">
-      <div class="card-category col-12 col-lg-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3xlgnM0)">
-        Sports
-      </div>
+      
 
       <div class="card-category col-12 col-lg-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3yufnFz)">
         Socialize
@@ -40,12 +51,12 @@
 
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3wjBgFZ)">
         Entrepreneur
-      </div>
+      </div> %>
 
-       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3wgoFDL)">
+       <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3wgoFDL)">
         Travel
       </div>
     </div>
   </div>
-</div>
+</div> %>
 

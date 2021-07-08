@@ -5,7 +5,7 @@
     <%= link_to event_path(event) do %>
       <div class="card-trip">
       <% if event.pictures.attached? %>
-        <%= cl_image_tag event.pictures.key %>
+        <%= cl_image_tag event.pictures[0].key %>
       <% else %>
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
       <% end %>

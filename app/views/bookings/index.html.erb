@@ -1,20 +1,24 @@
-<div class="container">
+<div class="container mt-3">
   <h1>Bookings</h1>
-  <% @bookings.each do |booking| %>
-    <div class="booking-card">
-      <div class="card-header">
-        <%= link_to event_path(booking.event) do  %>
-          <%= cl_image_tag booking.event.pictures.key %>
-        <% end %>
+    <div class="bookings-container">
+    <% @bookings.each do |booking| %>
+      <div class="booking-card m-3">
+        <div class="card-header">
+          <%= link_to event_path(booking.event) do  %>
+            <%= cl_image_tag booking.event.pictures.key %>
+          <% end %>
+        </div>
+        <div class="card-body">
+          <span class="tag mb-2"><%= booking.event.category.name %></span>
+          <h4><%= booking.event.title %></h4>
+          <div class="d-flex justify-content-center">
+            <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
+            <a href="https://maps.google.com/?q=<%= booking.event.address %>" class="direction-style"><%= booking.event.address %></a>
+          </div>
+          <p><i class="fas fa-calendar-day"></i> <%= booking.event.date %></p>
+          <%= link_to "Destroy this booking", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
+        </div>
       </div>
-      <div class="card-body">
-        <span class="tag mb-2"><%= booking.event.category.name %></span>
-        <h4><%= booking.event.title %></h4>
-        <p><%= booking.event.description %></p>
-        <p><%= booking.event.date %></p>
-        <%= link_to "Destroy this booking", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-

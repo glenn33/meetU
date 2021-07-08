@@ -1,34 +1,39 @@
+<div class="container">
+  <div class="banner show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(@event.pictures.key) %>');"> 
+    </div>
+</div>
 
-
-<div class="avatars-book-container container d-flex justify-content-between my-5">
-  <div class="avatars-container">
-    <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
-    <% @event.bookings.each do |booking| %>
-    <% if booking.user.profile_picture.attached? %>
-          <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+<div class="container body-container">
+  <div class="info-container">
+    <div class="avatars-container">
+      <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
+      <% @event.bookings.each do |booking| %>
+        <% if booking.user.profile_picture.attached? %>
+            <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
         <% else %>
-          <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
-     
+      <% end %>
+    </div>
+
+    <div class="text-container">
+      <h1><%= @event.title %></h1>
+      <h3 class="tag mb-2"><%= @event.category.name  %></h3>
+      <div class="description my-3">
+        <h1>More about this event..</h1>
+        <h2><%= @event.description %></h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="join-container">
+    <div class="d-flex justify-content-center my-2">
+      <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
+      <a href="https://maps.google.com/?q=<%= @event.address %>" class="direction-style"><%= @event.address %></a>
+    </div>
+    <p><i class="fas fa-calendar-day"></i> <%= @event.date %></p>
+    <%= simple_form_for [@event, @booking] do |f| %>
+      <%= f.submit "Join this event", class:"btn btn-flat w-100 mt-4" %>
     <% end %>
   </div>
-  <%= simple_form_for [@event, @booking] do |f| %>
-    <%= f.submit %>
-  <% end %>
 </div>
-
-<div class="container d-flex justify-content-between">
-  <div class="event-info">
-    <h1><%= @event.title %></h1>
-    <h2><%= @event.category.name  %></h2>
-    <p>Address: <%= @event.address %></p>
-    <p>Date: <%= @event.date %></p>
-  </div>
-  
-  <div class="event-description">
-  <h2>More about this event..</h2>
-  <p><%= @event.description %></p>
-  </div>
-</div>
-
-  <%# <%= link_to "Delete this event", event_path(@event), method: :delete, data: { confirm: "Are you sure?"} %>

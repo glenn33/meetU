@@ -1,6 +1,29 @@
 <div class="container">
-  <div class="banner show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(@event.pictures.key) %>');"> 
-    </div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner banner-show">
+    <% @event.pictures.each_with_index do |picture, index| %>
+      <% if index == 0 %>
+        <div class="carousel-item active">
+          <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+          </div>
+        </div>
+      <% else %>
+        <div class="carousel-item">
+          <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 <div class="container body-container">
@@ -29,7 +52,7 @@
   <div class="join-container">
     <div class="d-flex justify-content-center my-2">
       <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
-      <a href="https://maps.google.com/?q=<%= @event.address %>" class="direction-style"><%= @event.address %></a>
+      <a href="https://maps.google.com/?q=<%= @event.address %>" target="_blank" class="direction-style"><%= @event.address %></a>
     </div>
     <p><i class="fas fa-calendar-day"></i> <%= @event.date %></p>
     <%= simple_form_for [@event, @booking] do |f| %>

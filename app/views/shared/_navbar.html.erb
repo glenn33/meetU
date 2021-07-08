@@ -16,6 +16,7 @@
         <li class="nav-item dropdown">
         <% if current_user.profile_picture.attached? %>
           <%= cl_image_tag current_user.profile_picture.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
         <% else %>
           <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
@@ -23,6 +24,7 @@
             <%= link_to "Bookings", bookings_path, class: "dropdown-item" %>
             <%= link_to "My events", my_events_path, class: "dropdown-item" %>
             <%= link_to "My account", edit_user_registration_path, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

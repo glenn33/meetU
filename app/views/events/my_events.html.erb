@@ -11,7 +11,10 @@
           <div class="col-md-8">
             <div class="card-body">
               <h2 class="card-title"><%= event.title %></h2>
-              <h4><%= event.description %></h4>
+              <div class="d-flex justify-content-center">
+                <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
+                <a href="https://maps.google.com/?q=<%= event.address %>" class="direction-style"><%= event.address.truncate(45, separator: ' ') %></a>
+              </div>
               <h4 class="card-text"><small class="text-muted"><i class="fas fa-calendar-day"></i>  <%= event.date %></small></h4>
               <div class="d-flex justify-content-between">
                 <%= link_to "Edit event", edit_event_path(event), id:"je", class:"btn btn-je mr-3", style:"background-color: gray;" %>

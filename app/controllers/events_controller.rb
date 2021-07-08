@@ -4,7 +4,21 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-  
+
+
+    if params[:address].present?
+      @events = Event.near(params[:address], 15) if 
+      @marks = @events.geocoded.map do |event|
+        {
+          lat: event.latitude,
+          lng: event.longitude
+        }
+      end
+    end
+
+    if params[:search].present?
+      @events = @events.search_by_title_and_description(params[:search])
+    end
   end
 
   def show

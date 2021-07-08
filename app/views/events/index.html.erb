@@ -7,7 +7,7 @@
       <% if event.pictures.attached? %>
         <%= cl_image_tag event.pictures[0].key %>
       <% else %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <img src=<%=event.category.picture  %>  /> 
       <% end %>
         <div class="card-trip-infos">
           <div>

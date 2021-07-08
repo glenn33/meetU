@@ -49,11 +49,17 @@
 
 
 // Card home
+.home-container{
+  display: flex;
+  width: 1000px;
+  gap: 10px 3%;
+}
 .card-category {
   background-size: cover;
   background-position: center;
   height: 180px;
   width: 360px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,7 +69,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px 10px;
   &:hover {
   transition: all 0.2s ease-out;
   box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);

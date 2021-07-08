@@ -1,26 +1,134 @@
-.footer {
-  background: rgb(50,50,50);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: #F4F4F4;
+  /*footer*/
+  .col_white_amrc {
+    color:rgb(6, 219, 162);
+  }
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
 }
-.footer-links {
-  display: flex;
-  align-items: center;
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
 }
-.footer-links a {
-  color: #f68172;
-  opacity: 0.9;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
+
+#footer {
+  bottom: 0;
+  width: 100%;
+
 }
-.footer-links a:hover {
-  opacity: 1;
-}
-#space-full-screen {
-  height: 100vh !important;
-}
+
+  footer {
+    width:100%;
+    background-color:rgb(7, 59, 76);
+    min-height:250px;
+    padding:10px 0px 25px 0px ;
+  }
+
+  .pt2 {
+    padding-top:40px ;
+    margin-bottom:20px ;
+  }
+
+  footer p { font-size:13px;
+    color:#FFF;
+    padding-bottom:0px;
+    margin-bottom:8px;
+  }
+
+  .mb10 {
+    padding-bottom:15px ;
+  }
+
+  .footer_ul_amrc {
+    margin:0px ;
+    list-style-type:none ;
+    font-size:14px;
+    padding:0px 0px 10px 0px ;
+  }
+
+  .footer_ul_amrc li {
+    padding:0px 0px 5px 0px;
+  }
+
+  .footer_ul_amrc li a{
+    color:#FFF;
+  }
+  .footer_ul_amrc li a:hover{
+    color:#fff;
+    text-decoration:none;
+  }
+
+  .fleft {
+    float:left;
+  }
+
+  .padding-right {
+    padding-right:10px;
+  }
+
+  .footer_ul2_amrc {
+    margin:0px;
+    list-style-type:none;
+    padding:0px;
+  }
+
+  .footer_ul2_amrc li p {
+    display:table;
+  }
+
+  .footer_ul2_amrc li a:hover {
+    text-decoration:none;
+  }
+
+  .footer_ul2_amrc li i {
+    margin-top:5px;
+  }
+
+  .bottom_border {
+    border-bottom:1px
+    solid rgb(17, 138, 178);
+    padding-bottom:20px;
+    gap: 10px 20%;
+  }
+
+  .foote_bottom_ul_amrc {
+    list-style-type:none;
+    padding:0px;
+    display:table;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+  }
+
+  .foote_bottom_ul_amrc li {
+    display:inline;
+    padding-left:20px;
+    padding-top:10px;
+    float:left;
+  }
+
+  .foote_bottom_ul_amrc li a {
+    color:rgb(6, 219, 162);
+    margin:0 12px;
+  }
+
+
+  .social-footer {
+    a {
+      color:#FFF;
+      border:1px solid #FFF;
+      padding:8px;
+      border-radius:50%;
+      margin: 10px;
+      width:39px;
+      height:39px;
+      i {
+        width:20px;
+        height:20px;
+        text-align:center;
+      }
+    }
+  }

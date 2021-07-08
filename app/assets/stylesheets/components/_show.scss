@@ -1,38 +1,74 @@
-.body-container {
-  background-color: white;
-  height: 430px;
+.show-banner {
+  padding: 268px;
+  margin: 38px 0;
+  border-radius: 10px;
+  border-radius: 13px;
 }
-.avatars-book-container {
-  height: 100px;
+//BODY----------------------------
+.body-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  gap: 10px 2%;
+  justify-content: space-around;
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .info-container {
   display: flex;
-  justify-content: space-between;
-  .event-info {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 1px 1px 15px rgb(162, 162, 162);
-    padding: 20px;
-  }
+  flex-direction: column;
+  row-gap: 35px;
   h1 {
     font-size: 30px;
   }
   h2 {
     font-size: 20px;
   }
+  h3 {
+    font-size: 18px;
+  }
   p {
     font-size: 17px;
   }
   @media (max-width: 700px) {
     flex-direction: column;
+  }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(221, 221, 221);
+  padding: 30px 0;
+  align-items: flex-start;
+  row-gap: 15px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 30px 0;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+// JOIN------------------------
+.join-container {
+  background-color: rgb(255, 255, 255);
+  height: 240px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0px 6px 16px rgb(191, 191, 191);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 15px 0;
+  &:hover {
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: rgb(248, 255, 251);
   }
 }
 

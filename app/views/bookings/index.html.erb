@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
   <h1>Bookings</h1>
     <div class="bookings-container">
     <% @bookings.each do |booking| %>
@@ -11,7 +11,10 @@
         <div class="card-body">
           <span class="tag mb-2"><%= booking.event.category.name %></span>
           <h4><%= booking.event.title %></h4>
-          <a href="https://maps.google.com/?q=<%= booking.event.address %>"><i class="fas fa-map-marker-alt"></i> <%= booking.event.address %></a>
+          <div class="d-flex justify-content-center">
+            <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
+            <a href="https://maps.google.com/?q=<%= booking.event.address %>" class="direction-style"><%= booking.event.address %></a>
+          </div>
           <p><i class="fas fa-calendar-day"></i> <%= booking.event.date %></p>
           <%= link_to "Destroy this booking", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
         </div>

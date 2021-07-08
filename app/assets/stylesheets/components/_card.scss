@@ -154,9 +154,15 @@ a:hover {
 .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   padding: 20px;
+  h4 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 17px;
+  }
 }
 .tag {
   background: #cccccc;
@@ -168,13 +174,18 @@ a:hover {
   text-transform: uppercase;
   cursor: pointer;
 }
-.card-body p {
-  font-size: 17px;
-}
 
 .bookings-container {
   display: flex;
   @media (max-width: 600px) {
     flex-direction: column;
+  }
+}
+
+.direction-style {
+  color: rgb(113, 113, 113);
+  &:hover {
+    text-decoration: underline;
+    color: rgb(94, 94, 94);
   }
 }

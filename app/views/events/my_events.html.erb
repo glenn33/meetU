@@ -5,7 +5,7 @@
         <div class="row g-0">
           <div class="col-md-4">
             <%= link_to event_path(event) do %>
-              <%= cl_image_tag event.pictures.key, class:"img-fluid rounded-start" %>
+              <%= cl_image_tag event.pictures[0].key, class:"img-fluid rounded-start" %>
             <% end %>
           </div>
           <div class="col-md-8">
@@ -13,7 +13,7 @@
               <h2 class="card-title"><%= event.title %></h2>
               <div class="d-flex justify-content-center">
                 <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
-                <a href="https://maps.google.com/?q=<%= event.address %>" class="direction-style"><%= event.address.truncate(45, separator: ' ') %></a>
+                <a href="https://maps.google.com/?q=<%= event.address %>" target="_blank" class="direction-style"><%= event.address.truncate(45) %></a>
               </div>
               <h4 class="card-text"><small class="text-muted"><i class="fas fa-calendar-day"></i>  <%= event.date %></small></h4>
               <div class="d-flex justify-content-between">

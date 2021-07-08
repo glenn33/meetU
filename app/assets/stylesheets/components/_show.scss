@@ -1,8 +1,16 @@
-.show-banner {
-  padding: 268px;
+
+#carouselExampleIndicators {
   margin: 38px 0;
+  height: 50%;
+}
+.carousel-img {
+  background-size: cover;
   border-radius: 10px;
-  border-radius: 13px;
+  height: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+a:hover {
+  text-decoration: none;
 }
 //BODY----------------------------
 .body-container {

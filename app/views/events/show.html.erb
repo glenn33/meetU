@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="banner show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(@event.pictures.key) %>');"> 
     </div>
@@ -8,6 +6,7 @@
 <div class="container body-container">
   <div class="info-container">
     <div class="avatars-container">
+      <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
       <% @event.bookings.each do |booking| %>
         <% if booking.user.profile_picture.attached? %>
             <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>

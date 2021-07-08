@@ -1,5 +1,8 @@
+
+
 <div class="avatars-book-container container d-flex justify-content-between my-5">
   <div class="avatars-container">
+    <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
     <% @event.bookings.each do |booking| %>
     <% if booking.user.profile_picture.attached? %>
           <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>

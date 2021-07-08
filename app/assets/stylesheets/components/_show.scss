@@ -1,6 +1,6 @@
 
 #carouselExampleIndicators {
-  margin: 38px 0;
+  margin: 40px 0;
   height: 50%;
 }
 .carousel-img {
@@ -27,6 +27,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   row-gap: 35px;
+  width: 60%;
   h1 {
     font-size: 30px;
   }

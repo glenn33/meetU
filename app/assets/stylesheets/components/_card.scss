@@ -7,6 +7,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-right: 10px;
   margin-top: 17px;
+  min-height: 48px;
 }
 
 .card-trip > img {
@@ -49,10 +50,10 @@
 
 
 // Card home
-.home-container{
-  display: flex;
-  width: 1000px;
-  gap: 10px 3%;
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 18px;
 }
 .card-category {
   background-size: cover;

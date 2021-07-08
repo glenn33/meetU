@@ -6,9 +6,7 @@
   <%= f.input :date %>
   <%= f.input :address %>
   <%= f.input :description %>
-  <%= f.input :pictures, as: :file %>
-  <%= f.input :premium %>
+  <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
- <% end %>
- 
+  <% end %>
 </div>

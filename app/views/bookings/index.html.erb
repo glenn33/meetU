@@ -5,7 +5,11 @@
       <div class="booking-card m-3">
         <div class="card-header">
           <%= link_to event_path(booking.event) do  %>
-            <%= cl_image_tag booking.event.pictures[0].key %>
+            <% if booking.event.pictures.attached? %>
+              <%= cl_image_tag booking.event.pictures[0].key %>
+            <% else %>
+              <img src=<%= booking.event.category.picture  %>/> 
+            <% end %>
           <% end %>
         </div>
         <div class="card-body">

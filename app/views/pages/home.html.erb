@@ -13,16 +13,15 @@
   </div>
 </div>
 
-<h2 class="text-center mt-3" style="color:rgb(7, 59, 76);">CATEGORIES</h2>
 
 <div class="container">
-  <div class="home-container w-50">
+  <h2 class="text-center my-3" style="color:rgb(7, 59, 76);">Discover our categories!</h2>
+  <div class="home-container">
     <% @categories.each do |category|  %>
       <%= link_to events_path(category.name) do  %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.picture  %>)"> 
-              <%= category.name %>
-            
-            </div>
+          <%= category.name %>
+        </div>
       <% end  %>
     <% end %>
   </div>

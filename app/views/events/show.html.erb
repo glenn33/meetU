@@ -1,29 +1,33 @@
 <div class="container">
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner banner-show">
-    <% @event.pictures.each_with_index do |picture, index| %>
-      <% if index == 0 %>
-        <div class="carousel-item active">
-          <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+  <% if @event.pictures.attached? %>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner banner-show">
+      <% @event.pictures.each_with_index do |picture, index| %>
+        <% if index == 0 %>
+          <div class="carousel-item active">
+            <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+            </div>
           </div>
-        </div>
-      <% else %>
-        <div class="carousel-item">
-          <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+        <% else %>
+          <div class="carousel-item">
+            <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+    </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  <% else %>
+    <img src=<%= @event.category.picture %> class="carousel-img my-5 w-100"/> 
+  <% end %>
 </div>
 
 <div class="container body-container">
@@ -37,9 +41,8 @@
             <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="text-container">
+      </div>
+      <div class="text-container">
       <h1><%= @event.title %></h1>
       <h3 class="tag mb-2"><%= @event.category.name  %></h3>
       <div class="description my-3">

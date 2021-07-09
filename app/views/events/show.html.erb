@@ -50,10 +50,7 @@
         <h2><%= @event.description %></h2>
       </div>
       <div class="chat">
-        <h1>Chat of this event!</h1>
-        <%= simple_form_for [ @event, @message ], remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Message to this group!" %>
-        <% end %>
+        <h1 class="mb-5">Chat of the event!</h1>
         <div id="messages" data-event-id="<%= @event.id %>">
           <% @event.messages.each do |message| %>
             <div class="message-container" id="message-<%= message.id %>">
@@ -74,6 +71,10 @@
             </div>
           <% end %>
         </div>
+        <%= simple_form_for [ @event, @message ], class:"chat-form", remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Send a message to the group!" %>
+          <%= f.submit "Send", class:"btn btn-flat", id:"submit-chat" %>
+        <% end %>
       </div>
     </div>
   </div>

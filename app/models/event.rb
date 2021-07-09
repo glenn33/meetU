@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many_attached :pictures
+  has_many :messages
   validates :title, presence: true, length: {minimum:3, maximum:32}
   validates :description, presence: true, length: {minimum:10}
   validates :address, presence: true
@@ -17,4 +18,5 @@ class Event < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
+
 end

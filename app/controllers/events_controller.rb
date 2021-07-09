@@ -4,8 +4,6 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-
-
     if params[:address].present?
       @events = Event.near(params[:address], 15) if 
       @marks = @events.geocoded.map do |event|
@@ -14,7 +12,6 @@ class EventsController < ApplicationController
           lng: event.longitude
         }
       end
-  
     end
 
     if params[:search].present?
@@ -22,16 +19,13 @@ class EventsController < ApplicationController
     end
     
     if params[:format].present?
-      
       @events = Event.joins(:category).where(categories: { name: params[:format] })
-
     end
-    
-    
   end
 
-  def show  
+  def show
     @booking = Booking.new
+    @message = Message.new
   end
 
   def new

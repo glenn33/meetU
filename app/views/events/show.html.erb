@@ -49,6 +49,32 @@
         <h1>More about this event..</h1>
         <h2><%= @event.description %></h2>
       </div>
+      <div class="chat">
+        <h1>Chat of this event!</h1>
+        <%= simple_form_for [ @event, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message to this group!" %>
+        <% end %>
+        <div id="messages" data-event-id="<%= @event.id %>">
+          <% @event.messages.each do |message| %>
+            <div class="message-container" id="message-<%= message.id %>">
+              <div class="avatar mb-2">
+                <% if message.user.profile_picture.attached? %>
+                    <%= cl_image_tag message.user.profile_picture.key, class: "avatar mx-2" %>
+                <% else %>
+                    <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% end %>
+              </div>
+              <div class="author">
+                <div class="author-info">
+                  <span><%= message.user.full_name %></span>
+                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                </div>
+                <p class="pt-2"><%= message.content %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 

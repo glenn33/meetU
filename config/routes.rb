@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/my_events', to: 'events#my_events'
   resources :events do
     resources :bookings, only: :create
+    resources :messages, only: :create
   end
   resources :bookings, only: [:index, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

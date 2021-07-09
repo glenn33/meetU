@@ -64,7 +64,22 @@ event2 = Event.create(user_id: User.find_by(email: "martin@gmail.com").id, categ
 file = URI.open("https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=868&q=80") # use cloudinary url
 event2 = event2.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
+event6 = Event.create(user_id: User.find_by(email: "glenn@gmail.com").id, category_id: Category.find_by(name: "Study groups").id, date: Date.today , address: "Barcelona, Catalunya, España", title: "Historia del arte", premium: false, description: "Hola!, somos un grupo de amigos que nos juntamos a estudiar historia del arte. Si te entusiasma, sos bienvenido!"  )
+file = URI.open("https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") # use cloudinary url
+event6 = event6.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
 event3 = Event.create(user_id: User.find_by(email: "glenn@gmail.com").id, category_id: Category.find_by(name: "Study groups").id, date: Date.today , address: "gran vía 55, madrid", title: "Grupo de estudio de Javascript", premium: false, description: "Hola!, somos un grupo de amigos que nos juntamos a estudiar javascript. Si te entusiasma, sos bienvenido!"  )
 file = URI.open("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") # use cloudinary url
 event3 = event3.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+event5 = Event.create(user_id: User.find_by(email: "martin@gmail.com").id, category_id: Category.find_by(name: "Sports").id, date: Date.today , address: "Barcelona, Catalunya, España", title: "Football 7", premium: false, description: "Si te gusta el football, este fin de semana es la actividad para vos. Sumate!"  )
+file = URI.open("https://images.unsplash.com/photo-1603291697926-7e5822ed1ac5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80") # use cloudinary url
+event5 = event5.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+event4 = Event.create(user_id: User.find_by(email: "santi@gmail.com").id, category_id: Category.find_by(name: "Outdoor").id, date: Date.today , address: "Barcelona, Catalunya, España", title: "Acampamos en la montaña", premium: false, description: "Este finde salimos a correr por la montaña. Traer comida, abrigo y ganas de compartir un buen momento"  )
+file = URI.open("https://images.unsplash.com/photo-1534246357846-40b500934c14?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80") # use cloudinary url
+event4 = event4.pictures.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
+
+
+
+

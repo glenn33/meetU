@@ -85,7 +85,7 @@ test:
 
 production:
   <<: *default
-
+  webpack_compile_output: true
   # Production depends on precompilation of packs prior to booting for performance.
   compile: false
 

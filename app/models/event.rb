@@ -3,7 +3,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many_attached :pictures
-  has_many :messages
+  has_many :messages, dependent: :destroy
   validates :title, presence: true, length: {minimum:3, maximum:32}
   validates :description, presence: true, length: {minimum:10}
   validates :address, presence: true

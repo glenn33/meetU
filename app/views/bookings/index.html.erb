@@ -20,7 +20,7 @@
             <a href="https://maps.google.com/?q=<%= booking.event.address %>" target="_blank" class="direction-style"><%= booking.event.address.truncate(27) %></a>
           </div>
           <p><i class="fas fa-calendar-day"></i> <%= booking.event.date %></p>
-          <%= link_to "Destroy this booking", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
+          <%= link_to "I'm not going anymore", booking_path(booking), method: :delete, class:"btn btn-je", data: { confirm: "Are you sure?"} %>
         </div>
       </div>
     <% end %>

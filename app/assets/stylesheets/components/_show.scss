@@ -1,4 +1,4 @@
-
+// Carousel------------------------
 #carouselExampleIndicators {
   margin: 40px 0;
   height: 50%;
@@ -12,17 +12,20 @@
 a:hover {
   text-decoration: none;
 }
+
 //BODY----------------------------
 .body-container {
   display: flex;
   gap: 10px 2%;
-  justify-content: space-around;
-  @media (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-  }
+  justify-content: space-between;
 }
-
+.info-ps {
+  color: grey;
+}
+.owner-avatar {
+  display: flex;
+  align-items: center;
+}
 .info-container {
   display: flex;
   flex-direction: column;
@@ -61,12 +64,23 @@ a:hover {
   border-top: 1px solid rgb(221, 221, 221);
 }
 
+.second-element {
+  width: 38%;
+  #map {
+    height: 185px;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px 6px 16px rgb(191, 191, 191);
+  }
+}
+
 // JOIN------------------------
 .join-container {
   background-color: rgb(255, 255, 255);
   height: 240px;
+  width: 100%;
   border: 1px solid rgb(221, 221, 221);
-  border-radius: 12px;
+  border-radius: 0 0 12px 12px;
   padding: 24px;
   box-shadow: 0px 6px 16px rgb(191, 191, 191);
   display: flex;
@@ -82,12 +96,12 @@ a:hover {
   }
 }
 
-// CHAT
+// CHAT-------------------------------------
 
 .chat {
   border-top: 1px solid rgb(221, 221, 221);
   padding-top: 30px;
-  width: 100%
+  width: 100%;
 }
 #submit-chat {
   padding: 2px 12px;
@@ -115,4 +129,32 @@ a:hover {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+// MEDIA------------------------------------------
+@media (max-width: 600px) {
+  .body-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .info-container {
+    width: 100%;
+  }
+  .second-element {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .body-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .info-container {
+    width: 100%;
+  }
+  .second-element {
+    width: 100%;
+    margin-bottom: 25px;
+  }
 }

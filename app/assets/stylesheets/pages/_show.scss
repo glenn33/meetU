@@ -19,6 +19,9 @@ a:hover {
   gap: 10px 2%;
   justify-content: space-between;
 }
+.avatars-container {
+  min-height: 81px;
+}
 .info-ps {
   color: grey;
 }
@@ -42,9 +45,6 @@ a:hover {
   }
   p {
     font-size: 17px;
-  }
-  @media (max-width: 700px) {
-    flex-direction: column;
   }
 }
 

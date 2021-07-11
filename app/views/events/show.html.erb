@@ -93,7 +93,8 @@
         <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
         <a href="https://maps.google.com/?q=<%= @event.address %>" target="_blank" class="direction-style"><%= @event.address %></a>
       </div>
-      <p><i class="fas fa-calendar-day"></i> <%= @event.date %></p>
+      <p class="mb-0"><i class="far fa-calendar-check"></i> <%= @event.date.strftime(" %A, %d %b %Y") %></p>
+      <p><i class="far fa-clock"></i> <%= @event.date.strftime(" %l:%M %p") %></p>
       <%= simple_form_for [@event, @booking] do |f| %>
         <%= f.submit "Join this event", class:"btn btn-flat w-100" %>
       <% end %>

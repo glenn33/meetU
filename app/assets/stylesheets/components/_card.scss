@@ -147,6 +147,12 @@ a:hover {
     display: flex;
     width: 100%;
   }
+  .card-title {
+    color: black;
+  }
+  .card-title:hover {
+    color: rgb(67, 67, 67);
+  }
 }
 
 
@@ -165,7 +171,6 @@ a:hover {
   height: 100%;
   &:hover {
     transition: all 0.2s cubic-bezier();
-    top: -4px;
     border: 1px solid #cccccc;
     background-color: white;
   }
@@ -191,6 +196,12 @@ a:hover {
   }
   .btn {
     width: 100%;
+  }
+  .card-title {
+    color: black;
+  }
+  .card-title:hover {
+    color: rgb(67, 67, 67);
   }
 }
 .tag {

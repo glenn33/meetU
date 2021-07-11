@@ -32,15 +32,15 @@
 
 <div class="container body-container">
   <div class="info-container">
-    <% @event.bookings.each do |booking| %>
       <div class="avatars-container">
         <p class="info-ps">Participants</p>
-        <% if booking.user.profile_picture.attached? %>
-            <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
-        <% else %>
-            <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% @event.bookings.each do |booking| %>
+          <% if booking.user.profile_picture.attached? %>
+              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+          <% else %>
+              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
       <div class="text-container">
         <h1><%= @event.title %></h1>
@@ -62,7 +62,7 @@
                 <% if message.user.profile_picture.attached? %>
                     <%= cl_image_tag message.user.profile_picture.key, class: "avatar mx-2" %>
                 <% else %>
-                    <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
                 <% end %>
               </div>
               <div class="author">

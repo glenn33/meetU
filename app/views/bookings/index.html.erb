@@ -2,7 +2,7 @@
   <h1>Bookings</h1>
     <div class="bookings-container">
     <% @bookings.each do |booking| %>
-      <div class="booking-card m-3">
+      <div class="booking-card">
         <div class="card-header">
           <%= link_to event_path(booking.event) do  %>
             <% if booking.event.pictures.attached? %>

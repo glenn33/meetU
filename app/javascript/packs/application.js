@@ -30,6 +30,9 @@ import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initChatroomCable } from '../channels/event_channel';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initFlatpickr } from "../plugins/flatpikr";
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -37,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   initChatroomCable();
+  initFlatpickr();
 });

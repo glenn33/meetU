@@ -53,10 +53,14 @@
           <h1>More about this event..</h1>
           <h2><%= @event.description %></h2>
         </div>
-      <div class="chat">
+      <div class="chat" id="chat-id">
         <h1 class="mb-5">Chat of the event!</h1>
+        <%= simple_form_for [ @event, @message ], class:"chat-form", remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Send a message to the group!" %>
+          <%= f.submit "Send", class:"btn btn-flat", id:"submit-chat" %>
+        <% end %>
         <div id="messages" data-event-id="<%= @event.id %>">
-          <% @event.messages.each do |message| %>
+          <% @event.messages.reverse.each do |message| %>
             <div class="message-container" id="message-<%= message.id %>">
               <div class="avatar mb-2">
                 <% if message.user.profile_picture.attached? %>
@@ -75,10 +79,6 @@
             </div>
           <% end %>
         </div>
-        <%= simple_form_for [ @event, @message ], class:"chat-form", remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Send a message to the group!" %>
-          <%= f.submit "Send", class:"btn btn-flat", id:"submit-chat" %>
-        <% end %>
       </div>
     </div>
   </div>
@@ -101,3 +101,5 @@
     </div>
   </div>
 </div>
+
+<div style="height:800px;"></div>

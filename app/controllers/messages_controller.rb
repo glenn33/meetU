@@ -8,8 +8,8 @@ class MessagesController < ApplicationController
       EventChannel.broadcast_to(
         @event,
         render_to_string(partial: "message", locals: { message: @message })
-      )
-      redirect_to event_path(@event, anchor: "message-#{@message.id}")
+        )
+        redirect_to event_path(@event, anchor: "message-#{@message}")
     else
       render "events/show"
     end

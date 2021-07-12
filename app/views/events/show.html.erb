@@ -5,12 +5,12 @@
       <% @event.pictures.each_with_index do |picture, index| %>
         <% if index == 0 %>
           <div class="carousel-item active">
-            <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+            <div class="carousel-img" style="background-image: url('<%= cl_image_path picture.key%>')">
             </div>
           </div>
         <% else %>
           <div class="carousel-item">
-            <div class="carousel-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path picture.key%>')">
+            <div class="carousel-img" style="background-image: url('<%= cl_image_path picture.key%>')">
             </div>
           </div>
         <% end %>
@@ -32,23 +32,27 @@
 
 <div class="container body-container">
   <div class="info-container">
-    <div class="avatars-container">
-      <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
-      <% @event.bookings.each do |booking| %>
-        <% if booking.user.profile_picture.attached? %>
-            <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
-        <% else %>
-            <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="avatars-container">
+        <p class="info-ps">Participants</p>
+        <% @event.bookings.each do |booking| %>
+          <% if booking.user.profile_picture.attached? %>
+              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+          <% else %>
+              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
       <div class="text-container">
-      <h1><%= @event.title %></h1>
-      <h3 class="tag mb-2"><%= @event.category.name  %></h3>
-      <div class="description my-3">
-        <h1>More about this event..</h1>
-        <h2><%= @event.description %></h2>
-      </div>
+        <h1><%= @event.title %></h1>
+        <h3 class="tag mb-2"><%= @event.category.name  %></h3>
+          <div class="owner-avatar">
+            <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
+            <p class="info-ps mb-0">Hosted by <%= @event.user.full_name %></p>
+          </div>
+        <div class="description my-3">
+          <h1>More about this event..</h1>
+          <h2><%= @event.description %></h2>
+        </div>
       <div class="chat">
         <h1 class="mb-5">Chat of the event!</h1>
         <div id="messages" data-event-id="<%= @event.id %>">
@@ -58,7 +62,7 @@
                 <% if message.user.profile_picture.attached? %>
                     <%= cl_image_tag message.user.profile_picture.key, class: "avatar mx-2" %>
                 <% else %>
-                    <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
                 <% end %>
               </div>
               <div class="author">
@@ -79,14 +83,21 @@
     </div>
   </div>
 
-  <div class="join-container">
-    <div class="d-flex justify-content-center my-2">
-      <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
-      <a href="https://maps.google.com/?q=<%= @event.address %>" target="_blank" class="direction-style"><%= @event.address %></a>
+  <div class="second-element">
+    <div id="map"
+      data-markers="<%= @marker.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <p><i class="fas fa-calendar-day"></i> <%= @event.date %></p>
-    <%= simple_form_for [@event, @booking] do |f| %>
-      <%= f.submit "Join this event", class:"btn btn-flat w-100 mt-4" %>
-    <% end %>
+    <div class="join-container">
+      <div class="d-flex my-2">
+        <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
+        <a href="https://maps.google.com/?q=<%= @event.address %>" target="_blank" class="direction-style"><%= @event.address %></a>
+      </div>
+      <p class="mb-0"><i class="far fa-calendar-check"></i> <%= @event.date.strftime(" %A, %d %b %Y") %></p>
+      <p><i class="far fa-clock"></i> <%= @event.date.strftime(" %l:%M %p") %></p>
+      <%= simple_form_for [@event, @booking] do |f| %>
+        <%= f.submit "Join this event", class:"btn btn-flat w-100" %>
+      <% end %>
+    </div>
   </div>
 </div>

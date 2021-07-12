@@ -14,13 +14,15 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h2 class="card-title"><%= event.title %></h2>
+              <%= link_to event_path(event) do %>
+                <h2 class="card-title"><%= event.title %></h2>
+              <% end %>
               <div class="d-flex justify-content-center">
                 <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
                 <a href="https://maps.google.com/?q=<%= event.address %>" target="_blank" class="direction-style"><%= event.address.truncate(45) %></a>
               </div>
-              <h4 class="card-text"><small class="text-muted"><i class="fas fa-calendar-day"></i>  <%= event.date %></small></h4>
-              <div class="d-flex justify-content-between">
+              <h4 class="card-text"><small class="text-muted"><i class="fas fa-calendar-day"></i>  <%= event.date.strftime("%A, %d %b %Y, %l:%M %p") %></small></h4>
+              <div class="events-buttons">
                 <%= link_to "Edit event", edit_event_path(event), id:"je", class:"btn btn-je mr-3", style:"background-color: gray;" %>
                 <%= link_to "Delete event", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-je" %>
               </div>

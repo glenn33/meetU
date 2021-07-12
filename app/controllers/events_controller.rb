@@ -21,6 +21,10 @@ class EventsController < ApplicationController
     if params[:format].present?
       @events = Event.joins(:category).where(categories: { name: params[:format] })
     end
+
+    if params[:date].present?
+      @events = @events.where(date: params[:date])
+    end
   end
 
   def show

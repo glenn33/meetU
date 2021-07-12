@@ -1,5 +1,15 @@
+<div class="container search-bar-div-i">
+      <%= form_tag events_path, method: :get, class:"search-bar-i" do %>
+          <%= text_field_tag :search, params[:search], class: "search-form-i", placeholder: "Search an event"%>
+          <div class="divider-i"></div>
+          <%= text_field_tag :address, params[:address], class: "location-form-i", id:"event_address", placeholder: "Location"%>
+          <%= date_field_tag :date, params[:date], class: "date-form-i", as: :datetime, input_html: {class: "datepicker"} %>
+          <%= submit_tag "Search", class: "btn btn-ghost" %>
+        <% end %>
+    </div>
+
 <div class="container mt-3">
-  <h1>All events</h1>
+  <%# <h1>All events</h1> %>
   <div class="index-container">
   <% @events.each do |event| %>
     <%= link_to event_path(event) do %>

@@ -1,0 +1,14 @@
+<div class="pop-container">
+  <%= link_to event_path(event) do %>
+    <% if event.pictures.attached? %>
+      <%= cl_image_tag event.pictures[0].key %>
+    <% else %>
+      <img src=<%= event.category.picture  %>/>
+    <% end %>
+    <h4><%= event.title %></h4>
+  <% end %>
+  <div class="pop-info">
+    <p><%= event.category.name %></p>
+    <p class="card-trip-pricing" style="width: 70px; font-size: 15px;"><i class="far fa-calendar-check"></i> <%= event.date.strftime("%-d/%-m/%y") %></p>
+  </div>
+</div>

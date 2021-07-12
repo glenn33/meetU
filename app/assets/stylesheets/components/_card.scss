@@ -2,7 +2,6 @@
 .index-container {
   display: grid;
   gap: 16px;
-  align-items: center;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
 }
 .card-trip {

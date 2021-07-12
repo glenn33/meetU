@@ -4,22 +4,17 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    if params[:address].present?
-      @events = Event.near(params[:address], 15) if 
-      @marks = @events.geocoded.map do |event|
-        {
-          lat: event.latitude,
-          lng: event.longitude
-        }
-      end
-    end
-
-    if params[:search].present?
-      @events = @events.search_by_title_and_description(params[:search])
-    end
     
-    if params[:format].present?
-      @events = Event.joins(:category).where(categories: { name: params[:format] })
+    @events = Event.near(params[:address], 15) if params[:address].present?
+    @events = @events.search_by_title_and_description(params[:search]) if params[:search].present?
+    @events = Event.joins(:category).where(categories: { name: params[:format] }) if params[:format].present?
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { event: event })
+      }
     end
 
     if params[:date].present?

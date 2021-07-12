@@ -1,0 +1,35 @@
+.index-body {
+  max-width: 1735px;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 3fr 2fr;
+  gap: 18px;
+}
+.index-map {
+  margin-top: 17px;
+  height: 80vh;
+  border-radius: 8px;
+}
+.pop-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  h4 {
+    margin-top: 5px;
+    font-size: 19px;
+    color: rgb(52, 52, 52);
+  }
+  p {
+    margin-bottom: 0
+  }
+  .pop-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+}

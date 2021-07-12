@@ -1,6 +1,6 @@
 <div class="d-flex align-items-center flex-column">
-  <h2 class="event-title">Any modification in your event?</h2>
   <div class="event-form">
+  <h2 class="event-title">Any modification in your event?</h2>
     <%= simple_form_for @event do |f| %>
       <%= f.input :title %>
       <%= f.input :category_id, collection: Category.all.map { |c| [ c.name, c.id ] }, include_blank: false %>
@@ -8,7 +8,11 @@
       <%= f.input :address, hint: "Enter the street and city" %>
       <%= f.input :description %>
       <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
-      <%= f.submit class: "btn btn-flat" %>
-    <% end %>
+
+      <div class="form-actions text-center">
+        <%= f.button :submit, "Update Event", class: "btn btn-flat" %>
+      </div>
+  <% end %>
   </div>
 </div>
+

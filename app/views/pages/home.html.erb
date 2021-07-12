@@ -1,7 +1,7 @@
 <div class="banner pt-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bit.ly/3AyI5ac);">
   <div class="container d-flex flex-column mb-5">
     <h1 class="mb-4"><strong>Connect with strangers, live new experiences</strong>!</h1>
-    <h4 class="mb-4" style="color:rgb(6, 219, 162); font-family:Nunito";>The easiest way to organize events with strangers wherever you go!</h4>
+    <h4 class="mb-4" style="color:rgb(6, 219, 162); font-family:Nunito";>The easiest way to organize events with strangers wherever you go.</h4>
     <%# <%= link_to "All events", events_path, class:"btn btn-success" %>
     <div class="container search-bar-div">
       <%= form_tag events_path, method: :get, class:"search-bar" do %>
@@ -16,7 +16,8 @@
 
 
 <div class="container">
-  <h2 class="text-center my-3" style="color:rgb(7, 59, 76);">Discover our categories!</h2>
+  <h2 class="text-left my-2" style="font-weight: bolder; color: #031d26;">Discover our categories</h2>
+  <p class="text-left mb-3" style="color: #073b4c;">What about diving into these helpful ideas? Here are some inspiring options.</p>
   <div class="home-container">
     <% @categories.each do |category|  %>
       <%= link_to events_path(category.name) do  %>

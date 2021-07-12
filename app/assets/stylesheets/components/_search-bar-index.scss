@@ -1,16 +1,14 @@
 .search-bar-div-i {
-    max-width: 700px;
+    margin:0 auto;
+    width: 70%;
     background-color: white;
-    height: 43px;
+    height: 55px;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: space-between;
-    border-radius: 50px;
+    border-radius: 0 0 8px 8px;
     padding-right: 10px;
-    position: relative;
-    top: 60px;
-    margin-bottom: 65px;
-
   }
   
   .search-bar-i {
@@ -18,7 +16,8 @@
     width: 100%;
     .btn-i {
       margin-right: 0;
-      padding: 9px 17px;
+      padding: 7px 16px;
+      border-radius: 8px;
     }
   
   }
@@ -37,9 +36,11 @@
   }
 
   .date-form-i {
+    color: rgb(120, 120, 120);
     border: 0;
     padding: 0 15px;
     width: 75%;
+    color: grey;
     &:focus {
       outline: none;
     }

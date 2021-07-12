@@ -5,6 +5,14 @@
 $body-font: "Work Sans", "Helvetica", "sans-serif";
 $headers-font: 'Source Sans Pro', sans-serif;
 
+h1, h2, h3 {
+  color: #052B38;
+}
+
+p, h4 {
+  color: #073b4c;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

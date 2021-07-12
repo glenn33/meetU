@@ -15,7 +15,72 @@
 </div>
 
 
+
+
 <div class="container">
+  <div class="trending-container">
+    <div class="title-container">
+      <h2>Our top trneding events </h2>
+      <h2>of these week!</h2>
+    </div>
+    <div class="carusel-container">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner banner-show">
+        <% @sorted_events.each_with_index do |event, index| %>
+          <% if index == 0 %>
+            <div class="carousel-item active">
+              <div class="home-carousel-container">
+                <%= link_to event_path(event) do %>
+                  <div class="card-trip">
+                  <% if event.pictures.attached? %>
+                    <%= cl_image_tag event.pictures[0].key %>
+                  <% else %>
+                    <img src=<%=event.category.picture  %>/>
+                  <% end %>
+                    <div class="card-trip-infos">
+                      <div>
+                        <h2 style="width: 165px;  min-height: 48px;"><%= event.title %></h2>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          <% else %>
+            <div class="carousel-item">
+              <div class="home-carousel-container">
+                <%= link_to event_path(event) do %>
+                  <div class="card-trip">
+                  <% if event.pictures.attached? %>
+                    <%= cl_image_tag event.pictures[0].key %>
+                  <% else %>
+                    <img src=<%=event.category.picture  %>/>
+                  <% end %>
+                    <div class="card-trip-infos">
+                      <div>
+                        <h2 style="width: 165px;  min-height: 48px;"><%= event.title %></h2>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
   <h2 class="text-left my-2" style="font-weight: bolder; color: #031d26;">Discover our categories</h2>
   <p class="text-left mb-3" style="color: #073b4c;">What about diving into these helpful ideas? Here are some inspiring options.</p>
   <div class="home-container">
@@ -28,36 +93,3 @@
     <% end %>
   </div>
 </div>
-
-<%# <div class="container">
-  <div class="row">
-    <div class="cards">
-      
-
-      <div class="card-category col-12 col-lg-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3yufnFz)">
-        Socialize
-      </div>
-
-      <div class="card-category col-12 col-lg-12" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3wiS3Jn)">
-        Outdoors
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/2TKHPUO)">
-        Cultural
-      </div>
-
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3wjBgFZ)">
-        Entrepreneur
-      </div> %>
-
-       <%# <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://bit.ly/3wgoFDL)">
-        Travel
-      </div>
-    </div>
-  </div>
-</div> %>
-

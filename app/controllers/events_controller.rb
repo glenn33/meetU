@@ -16,6 +16,10 @@ class EventsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
     end
+
+    if params[:date].present?
+      @events = @events.where(date: params[:date])
+    end
   end
 
   def show

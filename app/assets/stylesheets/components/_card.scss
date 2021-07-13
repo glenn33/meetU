@@ -178,7 +178,6 @@ a:hover {
   height: 100%;
   &:hover {
     transition: all 0.2s cubic-bezier();
-    border: 1px solid #cccccc;
     background-color: white;
   }
 }
@@ -200,6 +199,7 @@ a:hover {
   padding: 20px;
 
   h4 {
+    min-height: 52px;
     font-size: 22px;
     color: #073b4c;
   }

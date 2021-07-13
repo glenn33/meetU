@@ -20,7 +20,7 @@ a:hover {
   justify-content: space-between;
 }
 .avatars-container {
-  min-height: 81px;
+  min-height: 47px;
 }
 .info-ps {
   color: grey;
@@ -32,7 +32,7 @@ a:hover {
 .info-container {
   display: flex;
   flex-direction: column;
-  row-gap: 35px;
+  row-gap: 10px;
   width: 60%;
   h1 {
     font-size: 30px;
@@ -45,6 +45,7 @@ a:hover {
   }
   p {
     font-size: 17px;
+    margin-bottom: 0;
   }
 }
 

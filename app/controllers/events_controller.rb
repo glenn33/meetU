@@ -23,6 +23,7 @@ class EventsController < ApplicationController
     @booking = Booking.new
     @message = Message.new
     @marker = [{lat: @event.geocode[0], lng: @event.geocode[1]}]
+    @numOfParticipants = @event.bookings.count
   end
 
   def new

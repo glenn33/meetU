@@ -56,8 +56,9 @@
 
 
 // Card home
-.home-container {
+.home-cards-container {
   display: grid;
+  margin-top: 30px;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
   grid-gap: 16px;
   align-items: center;

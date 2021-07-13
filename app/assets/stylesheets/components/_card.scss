@@ -56,8 +56,9 @@
 
 
 // Card home
-.home-container {
+.home-cards-container {
   display: grid;
+  margin-top: 30px;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
   grid-gap: 16px;
   align-items: center;
@@ -98,7 +99,7 @@ a:hover {
   display: block;
   top: 0px;
   position: relative;
-  max-width: 262px;
+  width: 90%;
   background-color: #c4e4db;
   border-radius: 10px;
   padding: 20px 20px;

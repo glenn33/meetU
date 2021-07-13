@@ -103,6 +103,10 @@ a:hover {
   padding-top: 30px;
   width: 100%;
 }
+#messages {
+  max-height: 500px;
+  overflow: scroll;
+}
 #submit-chat {
   padding: 2px 12px;
   width: 100%;

@@ -1,12 +1,11 @@
-
 <div class="container search-bar-div-i">
-      <%= form_tag events_path, method: :get, class:"search-bar-i" do %>
-          <%= text_field_tag :search, params[:search], class: "search-form-i", placeholder: "Search an event"%>
-          <div class="divider-i"></div>
-          <%= text_field_tag :address, params[:address], class: "location-form-i", id:"event_address", placeholder: "Location"%>
-          <%= date_field_tag :date, params[:date], class: "date-form-i", as: :datetime, input_html: {class: "datepicker"} %>
-          <%= submit_tag "Search", class: "btn btn-ghost" %>
-        <% end %>
+  <%= form_tag events_path, method: :get, class:"search-bar-i" do %>
+    <%= text_field_tag :search, params[:search], class: "search-form-i", placeholder: "Search an event"%>
+    <div class="divider-i"></div>
+    <%= text_field_tag :address, params[:address], class: "location-form-i", id:"event_address", placeholder: "Location"%>
+    <%= date_field_tag :date, params[:date], class: "date-form-i datepicker", as: :datetime, placeholder:"Date"%>
+    <%= submit_tag "Search", class: "btn btn-ghost btn-i" %>
+  <% end %>
 </div>
 <div class="container mt-3 index-body">
   <div class="index-container">
@@ -34,7 +33,7 @@
     <% end %>
   <% end %>
   </div>
-    <div id="map" class="index-map"
+    <div id="map" style="margin-top: 17px; height: 80vh; border-radius: 8px; position: sticky; top: 0;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>

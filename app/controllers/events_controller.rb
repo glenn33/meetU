@@ -8,6 +8,7 @@ class EventsController < ApplicationController
     @events = Event.near(params[:address], 15) if params[:address].present?
     @events = @events.search_by_title_and_description(params[:search]) if params[:search].present?
     @events = Event.joins(:category).where(categories: { name: params[:format] }) if params[:format].present?
+    @events = @events.where(date: params[:date]) if params[:date].present?
 
     @markers = @events.geocoded.map do |event|
       {
@@ -15,10 +16,6 @@ class EventsController < ApplicationController
         lng: event.longitude,
         info_window: render_to_string(partial: "info_window", locals: { event: event })
       }
-    end
-
-    if params[:date].present?
-      @events = @events.where(date: params[:date])
     end
   end
 
@@ -60,6 +57,7 @@ class EventsController < ApplicationController
 
   def my_events
     @events = current_user.events
+    @event = Event.new
   end
 
   private

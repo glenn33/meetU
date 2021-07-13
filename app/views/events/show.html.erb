@@ -35,10 +35,12 @@
       <div class="avatars-container">
         <p class="info-ps">Participants</p>
         <% @event.bookings.each do |booking| %>
-          <% if booking.user.profile_picture.attached? %>
-              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
-          <% else %>
-              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+          <%= link_to profile_path(booking.user) do %>
+            <% if booking.user.profile_picture.attached? %>
+                <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+            <% else %>
+                <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
@@ -53,10 +55,14 @@
           <h1>More about this event..</h1>
           <p><%= @event.description %></p>
         </div>
-      <div class="chat">
+      <div class="chat" id="chat-id">
         <h1 class="mb-5">Chat of the event!</h1>
+        <%= simple_form_for [ @event, @message ], class:"chat-form", remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Send a message to the group!" %>
+          <%= f.submit "Send", class:"btn btn-flat", id:"submit-chat" %>
+        <% end %>
         <div id="messages" data-event-id="<%= @event.id %>">
-          <% @event.messages.each do |message| %>
+          <% @event.messages.reverse.each do |message| %>
             <div class="message-container" id="message-<%= message.id %>">
               <div class="avatar mb-2">
                 <% if message.user.profile_picture.attached? %>
@@ -75,10 +81,6 @@
             </div>
           <% end %>
         </div>
-        <%= simple_form_for [ @event, @message ], class:"chat-form", remote: true do |f| %>
-          <%= f.input :content, label: false, placeholder: "Send a message to the group!" %>
-          <%= f.submit "Send", class:"btn btn-flat", id:"submit-chat" %>
-        <% end %>
       </div>
     </div>
   </div>

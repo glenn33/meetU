@@ -1,35 +1,59 @@
-<div class="container mt-3">
-  <h1>My events</h1>
-  <% @events.each do |event| %>
-      <div class="events-card mb-3" style="max-width: 75%;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <%= link_to event_path(event) do %>
-              <% if event.pictures.attached? %>
-                <%= cl_image_tag event.pictures[0].key %>
-              <% else %>
-                <img src=<%= event.category.picture  %>/> 
-              <% end %>
-            <% end %>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
+
+<h1 class="event-tit">My events</h1>
+<div class="event-and-form-container ">
+  <div class="myevents-cards">
+    
+    <% @events.each do |event| %>
+        <div class="events-card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
               <%= link_to event_path(event) do %>
-                <h2 class="card-title"><%= event.title %></h2>
+                <% if event.pictures.attached? %>
+                  <%= cl_image_tag event.pictures[0].key %>
+                <% else %>
+                  <img src=<%= event.category.picture  %>/> 
+                <% end %>
               <% end %>
-              <div class="d-flex justify-content-center">
-                <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
-                <a href="https://maps.google.com/?q=<%= event.address %>" target="_blank" class="direction-style"><%= event.address.truncate(45) %></a>
-              </div>
-              <h4 class="card-text"><small class="text-muted"><i class="fas fa-calendar-day"></i>  <%= event.date.strftime("%A, %d %b %Y, %l:%M %p") %></small></h4>
-              <div class="events-buttons">
-                <%= link_to "Edit event", edit_event_path(event), id:"je", class:"btn btn-je mr-3", style:"background-color: gray;" %>
-                <%= link_to "Cancel event", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-je" %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <%= link_to event_path(event) do %>
+                  <h2 class="card-title"><%= event.title %></h2>
+                <% end %>
+                <div class="d-flex justify-content-center">
+                  <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
+                  <a href="https://maps.google.com/?q=<%= event.address %>" target="_blank" class="direction-style"><%= event.address.truncate(45) %></a>
+                </div>
+                <h4 class="card-text"><small class="text-muted"><i class="fas fa-calendar-day"></i>  <%= event.date.strftime("%A, %d %b %Y, %l:%M %p") %></small></h4>
+                <div class="events-buttons">
+                  <%= link_to "Edit event", edit_event_path(event), id:"je", class:"btn btn-je mr-3", style:"background-color: gray;" %>
+                  <%= link_to "Cancel event", event_path(event), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-je" %>
+                </div>
               </div>
             </div>
           </div>
         </div>
+    <% end %>
+  </div>
+  <div class="create-event">
+    <div class="d-flex align-items-center flex-column">
+      <div class="event-form" style="color: #073b4c">
+        <h2 class="event-title">Create an event</h2>
+        <%= simple_form_for @event do |f|  %>
+          <%= f.input :title %>
+          <%= f.input :category_id, collection: Category.all.map { |c| [ c.name, c.id ] }, include_blank: false %>
+          <%= f.input :date %>
+          <%= f.input :address, hint: "Enter the street and city" %>
+          <%= f.input :description %>
+          <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+          <div class="form-actions text-center">
+            <%= f.button :submit, "Create Event", class: "btn btn-flat" %>
+          </div>
+        <% end %>
       </div>
-  <% end %>
+    </div>
+  </div>
 </div>
-<div style="height: 300px;"></div>
+  
+
+<%# <div style="height: 300px;"></div> %>

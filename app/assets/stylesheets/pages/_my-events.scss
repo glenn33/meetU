@@ -1,0 +1,16 @@
+.event-and-form-container{
+    display: flex;
+
+    margin-inline: 150px;
+}
+
+.event-tit{
+    margin-top: 20px;
+    margin-left: 120px;
+}
+
+.event-form{
+    position: sticky;
+    top: 40px;
+    flex-direction: column;
+}

@@ -39,7 +39,7 @@
         <% @event.bookings.first(7).each do |booking| %>
           <%= link_to profile_path(booking.user) do %>
             <% if booking.user.profile_picture.attached? %>
-                <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+                <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}"%>
             <% else %>
                 <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
             <% end %>
@@ -50,7 +50,13 @@
         <h1><%= @event.title %></h1>
         <h3 class="tag mb-2"><%= @event.category.name  %></h3>
           <div class="owner-avatar">
-            <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
+            <%= link_to profile_path(@event.user) do %>
+              <% if @event.user.profile_picture.attached? %>
+                  <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
+              <% else %>
+                  <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+              <% end %>
+            <% end %>
             <p class="info-ps mb-0">Hosted by <%= @event.user.full_name %></p>
           </div>
         <div class="description my-3">

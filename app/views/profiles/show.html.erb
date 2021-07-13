@@ -63,6 +63,7 @@
             <p><%= event.description %></p>
             <div class="d-flex justify-content-between align-items-center">
               <p class="mb-0"><i class="far fa-calendar-check"></i> <%= event.date.strftime("%A, %d %b %Y") %></p>
+              
               <%= link_to "See details", event_path(event), class:"btn btn-flat" %>
             </div>
           </div>

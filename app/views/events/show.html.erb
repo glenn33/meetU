@@ -37,7 +37,7 @@
         <% @event.bookings.each do |booking| %>
           <%= link_to profile_path(booking.user) do %>
             <% if booking.user.profile_picture.attached? %>
-                <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+                <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}"%>
             <% else %>
                 <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
             <% end %>

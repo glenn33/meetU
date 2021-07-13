@@ -1,3 +1,7 @@
+.header-container {
+  padding-bottom: 20px;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -33,4 +37,9 @@
   text-align: left;
   margin-top: 70px;
   width: 100%;
+}
+
+.profile-body-container {
+  display: flex;
+  flex-direction: column;
 }

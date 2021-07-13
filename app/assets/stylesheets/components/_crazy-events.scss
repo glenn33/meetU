@@ -1,0 +1,31 @@
+.crazy-container {
+  width: 100%;
+  min-height: 270px;
+  align-items: center;
+  background-position: center;
+  border-radius: 10px;
+
+  .crazy-events {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 270px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    h3, p {
+      color: white;
+      max-width: 50%;
+      margin: 30px;
+    }
+  .btn {
+    height: 42px;
+    width: 384px;
+    margin-bottom: 17px;
+  }
+  }
+}
+
+

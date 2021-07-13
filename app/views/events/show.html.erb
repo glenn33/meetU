@@ -32,9 +32,11 @@
 
 <div class="container body-container">
   <div class="info-container">
+      <p type="button" class="" data-toggle="modal" data-target="#exampleModal">
+        Participants (<%= @numOfParticipants %>)
+      </p>
       <div class="avatars-container">
-        <p class="info-ps">Participants</p>
-        <% @event.bookings.each do |booking| %>
+        <% @event.bookings.first(7).each do |booking| %>
           <%= link_to profile_path(booking.user) do %>
             <% if booking.user.profile_picture.attached? %>
                 <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}"%>
@@ -107,6 +109,34 @@
       <%= simple_form_for [@event, @booking] do |f| %>
         <%= f.submit "Join this event", class:"btn btn-flat w-100" %>
       <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @event.bookings.each do |booking| %>
+          <%= link_to profile_path(booking.user) do %>
+            <% if booking.user.profile_picture.attached? %>
+              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+            <% else %>
+              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>

@@ -57,6 +57,7 @@ class EventsController < ApplicationController
 
   def my_events
     @events = current_user.events
+    @event = Event.new
   end
 
   private

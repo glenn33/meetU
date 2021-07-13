@@ -36,14 +36,16 @@
         Participants (<%= @numOfParticipants %>)
       </p>
       <div class="avatars-container">
+        <p class="info-ps">Participants</p>
         <% @event.bookings.first(7).each do |booking| %>
-          <% if booking.user.profile_picture.attached? %>
-              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
-          <% else %>
-              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+          <%= link_to profile_path(booking.user) do %>
+            <% if booking.user.profile_picture.attached? %>
+                <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+            <% else %>
+                <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+            <% end %>
           <% end %>
         <% end %>
-        
       </div>
       <div class="text-container">
         <h1><%= @event.title %></h1>

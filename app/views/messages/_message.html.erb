@@ -1,7 +1,16 @@
 <div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.full_name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+  <div class="avatar mb-2">
+    <% if message.user.profile_picture.attached? %>
+        <%= cl_image_tag message.user.profile_picture.key, class: "avatar mx-2" %>
+    <% else %>
+        <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+    <% end %>
+  </div>
+  <div class="author">
+    <div class="author-info">
+      <span><%= message.user.full_name %></span>
+      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    </div>
+    <p class="pt-2"><%= message.content %></p>
+  </div>
 </div>

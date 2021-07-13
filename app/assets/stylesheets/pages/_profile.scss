@@ -1,0 +1,36 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-banner {
+  border-radius: 10px;
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.avatar-profile {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 390px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  height: 120px;
+  border: white 1px solid;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 70px;
+  width: 100%;
+}

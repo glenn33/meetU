@@ -33,13 +33,20 @@
 
 .profile-info {
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  // flex-direction: column;
+  // text-align: left;
   margin-top: 70px;
   width: 100%;
+  align-items: flex-end;
+  justify-content: space-around;
 }
 
 .profile-body-container {
   display: flex;
   flex-direction: column;
+}
+
+.left-info{
+  width: 50%;
+  
 }

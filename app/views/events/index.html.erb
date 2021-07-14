@@ -24,6 +24,8 @@
           </div>
           <% if event.user.profile_picture.attached? %>
             <%= cl_image_tag event.user.profile_picture.key, class:"card-trip-user avatar-large" %>
+          <% elsif event.user.profile_url %>
+            <%= image_tag "#{event.user.profile_url}", class:"card-trip-user avatar-large" %>
           <% else %>
             <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class:"card-trip-user avatar-large" %>
           <% end %>

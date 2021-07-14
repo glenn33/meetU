@@ -1,6 +1,7 @@
 <div class="d-flex align-items-center flex-column">
   <div class="event-form" style="color: #073b4c">
      <h2 class="event-title">Are you logged in?</h2>
+
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,

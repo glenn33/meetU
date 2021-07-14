@@ -8,6 +8,8 @@
   </div>
   <% if @profile.profile_picture.attached? %>
       <%= cl_image_tag @profile.profile_picture.key, class:"card-trip-user avatar-profile" %>
+    <% elsif @profile.profile_url %>
+      <%= image_tag "#{@profile.profile_url}", class:"card-trip-user avatar-profile" %>
     <% else %>
       <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class:"card-trip-user avatar-profile" %>
     <% end %>
@@ -29,7 +31,6 @@
   </ul>
   <div class="tab-content tab-container" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
       <% @profile.bookings.each do |booking| %>
         <div class="card-product">
           <% if booking.event.pictures.attached? %>
@@ -47,10 +48,8 @@
           </div>
         </div>
       <% end %>
-
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      
       <% @profile.events.each do |event| %>
         <div class="card-product">
           <% if event.pictures.attached? %>
@@ -63,7 +62,6 @@
             <p><%= event.description %></p>
             <div class="d-flex justify-content-between align-items-center">
               <p class="mb-0"><i class="far fa-calendar-check"></i> <%= event.date.strftime("%A, %d %b %Y") %></p>
-              
               <%= link_to "See details", event_path(event), class:"btn btn-flat" %>
             </div>
           </div>

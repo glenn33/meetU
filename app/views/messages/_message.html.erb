@@ -2,6 +2,8 @@
   <div class="avatar mb-2">
     <% if message.user.profile_picture.attached? %>
         <%= cl_image_tag message.user.profile_picture.key, class: "avatar mx-2" %>
+    <% elsif message.user.profile_url %>
+        <%= image_tag "#{message.user.profile_url}", class: "avatar mx-2" %>
     <% else %>
         <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
     <% end %>

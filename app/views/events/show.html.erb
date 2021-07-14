@@ -40,8 +40,10 @@
           <%= link_to profile_path(booking.user) do %>
             <% if booking.user.profile_picture.attached? %>
                 <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}"%>
+            <% elsif booking.user.profile_url %>
+                <%= image_tag "#{booking.user.profile_url}", class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}" %>
             <% else %>
-                <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+                <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}" %>
             <% end %>
           <% end %>
         <% end %>
@@ -53,8 +55,10 @@
             <%= link_to profile_path(@event.user) do %>
               <% if @event.user.profile_picture.attached? %>
                   <%= cl_image_tag @event.user.profile_picture.key, class: "avatar mx-2" %>
+              <% elsif @event.user.profile_url %>
+                <%= image_tag "#{@event.user.profile_url}", class: "avatar mx-2" %>
               <% else %>
-                  <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+                  <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", class: "avatar mx-2" %>
               <% end %>
             <% end %>
             <p class="info-ps mb-0">Hosted by <%= @event.user.full_name %></p>
@@ -75,6 +79,8 @@
               <div class="avatar mb-2">
                 <% if message.user.profile_picture.attached? %>
                     <%= cl_image_tag message.user.profile_picture.key, class: "avatar mx-2" %>
+                <% elsif message.user.profile_url %>
+                  <%= image_tag "#{message.user.profile_url}", class: "avatar mx-2" %>
                 <% else %>
                     <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
                 <% end %>
@@ -101,11 +107,11 @@
     <div class="join-container">
       <div class="d-flex my-2">
         <i class="fas fa-map-marker-alt mr-1 mt-1"></i>
-        <a href="https://maps.google.com/?q=<%= @event.address %>" target="_blank" class="direction-style"><%= @event.address %></a>
+        <a href="https://maps.google.com/?q=<%= @event.address %>" target="_blank" class="direction-style"><%= @event.address.truncate(27) %></a>
       </div>
       <p class="mb-0"><i class="far fa-calendar-check"></i> <%= @event.date.strftime(" %A, %d %b %Y") %></p>
       <p><i class="far fa-clock"></i> <%= @event.date.strftime(" %l:%M %p") %></p>
-      <a href="whatsapp://send?text=<%="#{current_user.full_name} wants to share the next event: www.meetu.one/events/#{@event.id}!"%>" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"> Invite your friends!</i></a>
+      <a href="whatsapp://send?text=<%="#{current_user.full_name} wants to invite you to this event: www.meetu.one/events/#{@event.id}!"%>" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"> Invite a friend!</i></a>
       <%= simple_form_for [@event, @booking] do |f| %>
         <%= f.submit "Join this event", class:"btn btn-flat w-100" %>
       <% end %>
@@ -127,9 +133,11 @@
         <% @event.bookings.each do |booking| %>
           <%= link_to profile_path(booking.user) do %>
             <% if booking.user.profile_picture.attached? %>
-              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2" %>
+              <%= cl_image_tag booking.user.profile_picture.key, class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}" %>
+            <% elsif booking.user.profile_url %>
+                <%= image_tag "#{booking.user.profile_url}", class: "avatar mx-2", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}" %>
             <% else %>
-              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" %>
+              <%= image_tag "https://st3.depositphotos.com/6672868/13701/v/380/depositphotos_137014128-stock-illustration-user-profile-icon.jpg", :data => {toggle:"tooltip", placement:"bottom"}, title:"#{booking.user.full_name}" %>
             <% end %>
           <% end %>
         <% end %>

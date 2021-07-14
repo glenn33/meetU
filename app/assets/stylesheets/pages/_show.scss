@@ -67,18 +67,12 @@ a:hover {
 
 .second-element {
   width: 38%;
-  .show-map {
-    height: 385px;
-    width: 100%;
-    border-radius: 12px 12px 0 0;
-    box-shadow: 0px 6px 16px rgb(191, 191, 191);
-  }
 }
 
 // JOIN------------------------
 .join-container {
   background-color: rgb(255, 255, 255);
-  height: 240px;
+  height: 259px;
   width: 100%;
   border: 1px solid rgb(221, 221, 221);
   border-radius: 0 0 12px 12px;
@@ -94,6 +88,16 @@ a:hover {
     transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
     border: 1px solid #cccccc;
     background-color: rgb(248, 255, 251);
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .invite {
+    color: #073b4c;
+    font-size: 18px;
+  }
+  .invite:hover {
+    color: #074c11;
   }
 }
 

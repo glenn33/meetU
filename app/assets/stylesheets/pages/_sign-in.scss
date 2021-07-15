@@ -1,0 +1,23 @@
+#signin-form {
+  padding: 50px;
+  max-width: 500px;
+  .btn {
+    width: 100%;
+    border-radius: 50px;
+  }
+}
+#signin-title {
+  margin-bottom: 30px
+}
+.google-btn {
+  border-radius: 5px;
+  img {
+    margin-right: 10px;
+    height: 100%;
+    width: 30px;
+    border-radius: 50px;
+  }
+  .text {
+    color: white;
+  }
+}

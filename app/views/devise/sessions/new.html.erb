@@ -1,7 +1,6 @@
 <div class="d-flex align-items-center flex-column">
-  <div class="event-form" style="color: #073b4c">
-     <h2 class="event-title">Are you logged in?</h2>
-
+  <div class="event-form" id="signin-form"> 
+     <h2 class="event-title" id="signin-title">Sign in</h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -13,11 +12,16 @@
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
-
-        <div class="form-actions text-center">
-          <%= f.button :submit, "Log in", class: "btn btn-flat" %>
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do  %>
+        <div class="google-btn  btn btn-primary mt-3">
+        <%= image_tag "https://e7.pngegg.com/pngimages/337/722/png-clipart-google-search-google-account-google-s-google-play-google-company-text.png" %>
+          <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post, class:"text"  %>
         </div>
       <% end %>
+      <div class="form-actions text-center mb-5">
+          <%= f.button :submit, "Log in", class: "btn btn-flat mt-2" %>
+        </div>
       <%= render "devise/shared/links" %>
+      <% end %>
   </div>
 </div>

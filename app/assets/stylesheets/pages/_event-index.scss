@@ -4,6 +4,14 @@
   align-items: start;
   grid-template-columns: 3fr 2fr;
   gap: 18px;
+  .index-map {
+    margin-top: 17px;
+    height: 80vh;
+    width: 100%;
+    border-radius: 8px;
+    position: sticky;
+    top: 0px;
+  }
 }
 .pop-container {
   width: 100%;
@@ -29,5 +37,28 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-bar-div-i {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 0 0 8px 8px;
+    .date-form-i {
+      width: 80px;
+    }
+  }
+  .index-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: -35px !important;
+    .index-map {
+      height: 30vh;
+      width: 100%;
+    }
+    .index-container {
+      grid-template-columns: 1fr !important;
+    }
   }
 }

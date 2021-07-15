@@ -173,6 +173,7 @@ a:hover {
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
   gap: 20px;
   align-items: center;
+  min-height: 300px;
 }
 
 .booking-card {

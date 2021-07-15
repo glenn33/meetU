@@ -31,7 +31,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initChatroomCable } from '../channels/event_channel';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initFlatpickr } from "../plugins/flatpikr";
-
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,6 +40,16 @@ document.addEventListener('turbolinks:load', () => {
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+  initSweetalert('#sweet-alert-demo', {
+    title: "Congratulations!",
+    text: "You are now a participant of this event!",
+    icon: "success"
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#booking-link');
+      link.click();
+    }
+  });
   initMapbox();
   initAutocomplete();
   initChatroomCable();

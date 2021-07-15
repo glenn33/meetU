@@ -113,7 +113,15 @@
       <p><i class="far fa-clock"></i> <%= @event.date.strftime(" %l:%M %p") %></p>
       <a href="whatsapp://send?text=<%="#{current_user.nil? ? 'A friend' : current_user.full_name} wants to invite you to this event: www.meetu.one/events/#{@event.id}!"%>" class="invite" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"> Invite a friend!</i></a>
       <%= simple_form_for [@event, @booking] do |f| %>
-        <%= f.submit "Join this event", class:"btn btn-flat w-100" %>
+        <% if @event.user == current_user %>
+          <%= link_to "Manage this event", edit_event_path(@event), class:"btn btn-flat w-100" %>
+        <% elsif current_user.bookings.select { |booking| booking.event_id == @event.id }.empty? %>
+          <%= f.submit "Join this event", class:"btn btn-flat w-100 ", id:"sweet-alert-demo" %>
+          <%= link_to "", event_path(@event), id: "booking-link", class: "hidden" %>
+        <% else %>
+          <%= button_tag "You are already participating", class:"btn btn-flat w-100" %>
+        <% end %>
+
       <% end %>
     </div>
   </div>

@@ -111,7 +111,7 @@
       </div>
       <p class="mb-0"><i class="far fa-calendar-check"></i> <%= @event.date.strftime(" %A, %d %b %Y") %></p>
       <p><i class="far fa-clock"></i> <%= @event.date.strftime(" %l:%M %p") %></p>
-      <a href="whatsapp://send?text=<%="#{current_user.nil? ? 'A friend' : current_user.full_name} wants to invite you to this event: www.meetu.one/events/#{@event.id}!"%>" class="invite" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"> Invite a friend!</i></a>
+      <a href="https://api.whatsapp.com/send?text=<%="#{current_user.nil? ? 'A friend' : current_user.full_name} wants to invite you to this event: www.meetu.one/events/#{@event.id}!"%>" class="invite" data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"> Invite a friend!</i></a>
       <%= simple_form_for [@event, @booking] do |f| %>
         <% if @event.user == current_user %>
           <%= link_to "Manage this event", edit_event_path(@event), class:"btn btn-flat w-100" %>

@@ -66,19 +66,21 @@
     <div style="margin-top: 30px">
       <h2 class="text-left my-2" style="font-weight: bolder; color: #031d26;">Discover our categories</h2>
       <p class="text-left mb-3" style="color: #073b4c;">What about diving into these helpful ideas? Here are some inspiring options.</p>
-      <div class="home-cards-container">
+      <div class="row"> <!-- home-cards-container -->
         <% @categories.each do |category|  %>
+        <div class="col-12 col-md-6 col-lg-4">
           <%= link_to events_path(category.name) do  %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.picture  %>)">
               <%= category.name %>
             </div>
           <% end  %>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 
-  <div class="container" style="margin-top: 30px">
+  <div class="container crazy-cont" style="margin-top: 30px">
     <h3 class="text-left mt-3">The craziest events around the world</h3>
     <p>Discover the greatest ideas that people like you can organize wherever you are and meet awesome people having fun.</p>
     <div class="crazy-container d-flex flex-column mt-1 mb-5">
@@ -87,9 +89,8 @@
           <h3 class="mb-4">Rolling downhills chasing a cheese!</h3>
           <p class="mb-4" style="font-family:Nunito";>The Cooper's Hill Cheese-Rolling and Wake is an annual event held on the Spring Bank Holiday at Cooper's Hill, near Gloucester in England. Participants race down the 200-yard-long hill after a round of Double Gloucester cheese is sent rolling down it. Traditionally held by and for the people who live in the local village of Brockworth, but now people from all over the world take part.</p>
         </div>
-        <button type="button" class= "btn btn-ghost">Read Me!</button>
+        <%= link_to "Read Me!", "https://es.wikipedia.org/wiki/Festival_del_queso_rodante", class:"btn btn-ghost", target:"_blank"%>
       </div>
-      <%= link_to "Read Me!", "https://es.wikipedia.org/wiki/Festival_del_queso_rodante", class:"btn btn-ghost", target:"_blank"%>
     </div>
   </div>
 </div>

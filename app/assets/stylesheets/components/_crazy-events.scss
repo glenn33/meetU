@@ -1,3 +1,7 @@
+.crazy-cont {
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
 .crazy-container {
   width: 100%;
   min-height: 270px;
@@ -15,7 +19,6 @@
     background-size: cover;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
     h3, p {
       color: white;
       max-width: 50%;

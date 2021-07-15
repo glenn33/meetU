@@ -56,9 +56,6 @@
 
 
 // Card home
-.home-body-container {
-  border-bottom: 1px solid rgb(221, 221, 221);
-}
 
 .home-cards-container {
   display: grid;
@@ -74,8 +71,8 @@
   background-size: cover;
   background-position: center;
   height: 180px;
-  width: 360px;
-  margin: 0;
+  width: 100%;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -259,6 +256,14 @@ a:hover {
   }
   .bookings-container {
     grid-template-columns: 1fr !important;
+  }
+  .trending-container {
+    flex-direction: column;
+  }
+  .crazy-events {
+    flex-direction: column;
+  }
+  .search-bar-i {
   }
 }
 

@@ -15,78 +15,79 @@
 </div>
 
 <div class="container home-body-container">
-<div class="container">
-  <div class="trending-container">
-    <div class="title-container">
-      <h2>Our trending events </h2>
-      <h2>this week!</h2>
-      <p>Every week we will be posting those events trendy how gets a good amount of people around. Keep an eye here! --></p>
-    </div>
-    <div class="carusel-container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner home-carousel-container">
-        <% @sorted_events.each_with_index do |event, index| %>
-          <% if index == 0 %>
-            <div class="carousel-item active">
-              <%= link_to event_path(event) do %>
-                <div class="card-trip trending-card">
-                <% if event.pictures.attached? %>
-                  <%= cl_image_tag event.pictures[0].key %>
-                <% else %>
-                  <img src=<%=event.category.picture  %>/>
-                <% end %>
-                  <div class="card-trip-infos">
-                    <h2><%= event.title %></h2>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% else %>
-            <div class="carousel-item">
-              <%= link_to event_path(event) do %>
-                <div class="card-trip trending-card">
-                <% if event.pictures.attached? %>
-                  <%= cl_image_tag event.pictures[0].key %>
-                <% else %>
-                  <img src=<%=event.category.picture  %>/>
-                <% end %>
-                  <div class="card-trip-infos">
+  <div class="container">
+    <div class="trending-container">
+      <div class="title-container">
+        <h2>Our trending events </h2>
+        <h2>this week!</h2>
+        <p>Every week we will be posting those events trendy how gets a good amount of people around. Keep an eye here! --></p>
+      </div>
+      <div class="carusel-container">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner home-carousel-container">
+          <% @sorted_events.each_with_index do |event, index| %>
+            <% if index == 0 %>
+              <div class="carousel-item active">
+                <%= link_to event_path(event) do %>
+                  <div class="card-trip trending-card">
+                  <% if event.pictures.attached? %>
+                    <%= cl_image_tag event.pictures[0].key %>
+                  <% else %>
+                    <img src=<%=event.category.picture  %>/>
+                  <% end %>
+                    <div class="card-trip-infos">
                       <h2><%= event.title %></h2>
+                    </div>
                   </div>
-                </div>
-              <% end %>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="carousel-item">
+                <%= link_to event_path(event) do %>
+                  <div class="card-trip trending-card">
+                  <% if event.pictures.attached? %>
+                    <%= cl_image_tag event.pictures[0].key %>
+                  <% else %>
+                    <img src=<%=event.category.picture  %>/>
+                  <% end %>
+                    <div class="card-trip-infos">
+                        <h2><%= event.title %></h2>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      </div>
     </div>
+
+    <div style="margin-top: 30px">
+      <h2 class="text-left my-2" style="font-weight: bolder; color: #031d26;">Discover our categories</h2>
+      <p class="text-left mb-3" style="color: #073b4c;">What about diving into these helpful ideas? Here are some inspiring options.</p>
+      <div class="home-cards-container">
+        <% @categories.each do |category|  %>
+          <%= link_to events_path(category.name) do  %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.picture  %>)">
+              <%= category.name %>
+            </div>
+          <% end  %>
+        <% end %>
+      </div>
     </div>
   </div>
-  <div style="margin-top: 30px">
-    <h2 class="text-left my-2" style="font-weight: bolder; color: #031d26;">Discover our categories</h2>
-    <p class="text-left mb-3" style="color: #073b4c;">What about diving into these helpful ideas? Here are some inspiring options.</p>
-    <div class="home-cards-container">
-      <% @categories.each do |category|  %>
-        <%= link_to events_path(category.name) do  %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.picture  %>)"> 
-            <%= category.name %>
-          </div>
-        <% end  %>
-      <% end %>
-    </div>
-  </div>
-</div>
-</div>
 
-
-<div class="container">
-  <h3 class="text-left mt-3">The craziest events around the world</h3>
-  <p>Discover the greatest ideas that people like you can organize wherever you are and meet awesome people having fun.</p>
-  <div class="crazy-container d-flex flex-column mt-1 mb-5">
-    <div class="crazy-events" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://bit.ly/3reVAaU);">
-      <div>
-        <h3 class="mb-4">Rolling downhills chasing a cheese!</h3>
-        <p class="mb-4" style="font-family:Nunito";>The Cooper's Hill Cheese-Rolling and Wake is an annual event held on the Spring Bank Holiday at Cooper's Hill, near Gloucester in England. Participants race down the 200-yard-long hill after a round of Double Gloucester cheese is sent rolling down it. Traditionally held by and for the people who live in the local village of Brockworth, but now people from all over the world take part.</p>
+  <div class="container" style="margin-top: 30px">
+    <h3 class="text-left mt-3">The craziest events around the world</h3>
+    <p>Discover the greatest ideas that people like you can organize wherever you are and meet awesome people having fun.</p>
+    <div class="crazy-container d-flex flex-column mt-1 mb-5">
+      <div class="crazy-events" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://bit.ly/3reVAaU);">
+        <div>
+          <h3 class="mb-4">Rolling downhills chasing a cheese!</h3>
+          <p class="mb-4" style="font-family:Nunito";>The Cooper's Hill Cheese-Rolling and Wake is an annual event held on the Spring Bank Holiday at Cooper's Hill, near Gloucester in England. Participants race down the 200-yard-long hill after a round of Double Gloucester cheese is sent rolling down it. Traditionally held by and for the people who live in the local village of Brockworth, but now people from all over the world take part.</p>
+        </div>
+        <button type="button" class= "btn btn-ghost">Read Me!</button>
       </div>
       <%= link_to "Read Me!", "https://es.wikipedia.org/wiki/Festival_del_queso_rodante", class:"btn btn-ghost", target:"_blank"%>
     </div>

@@ -56,9 +56,14 @@
 
 
 // Card home
+.home-body-container {
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
 .home-cards-container {
   display: grid;
   margin-top: 30px;
+  margin-bottom: 30px;
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
   grid-gap: 16px;
   align-items: center;

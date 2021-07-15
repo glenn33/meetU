@@ -170,7 +170,7 @@ a:hover {
   grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
   gap: 20px;
   align-items: center;
-  min-height: 300px;
+  min-height: 450px;
 }
 
 .booking-card {
@@ -251,19 +251,8 @@ a:hover {
     display: flex !important;
     flex-direction: column;
   }
-  .index-container {
-    grid-template-columns: 1fr !important;
-  }
   .bookings-container {
     grid-template-columns: 1fr !important;
-  }
-  .trending-container {
-    flex-direction: column;
-  }
-  .crazy-events {
-    flex-direction: column;
-  }
-  .search-bar-i {
   }
 }
 

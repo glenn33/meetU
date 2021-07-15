@@ -65,11 +65,16 @@ a:hover {
   border-top: 1px solid rgb(221, 221, 221);
 }
 
+// JOIN------------------------
 .second-element {
   width: 38%;
+  .show-map {
+    height: 385px;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0px 6px 16px rgb(191, 191, 191);
+  }
 }
-
-// JOIN------------------------
 .join-container {
   background-color: rgb(255, 255, 255);
   height: 259px;
@@ -92,9 +97,11 @@ a:hover {
   p {
     margin-bottom: 0;
   }
+
   .invite {
     color: #073b4c;
-    font-size: 18px;
+    font-size: 17px;
+    font-family: 'Work Sans';
   }
   .invite:hover {
     color: #074c11;
@@ -152,6 +159,18 @@ a:hover {
   .second-element {
     width: 100%;
     margin-bottom: 25px;
+    .show-map {
+      height: 200px;
+    }
+  }
+  #carouselExampleIndicators {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 10px;
+    height: 280px;
+    .carousel-img {
+      height: 280px;
+    }
   }
 }
 @media (max-width: 768px) {

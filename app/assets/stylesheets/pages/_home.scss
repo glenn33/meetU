@@ -29,3 +29,20 @@
     height: 70px;
   }
 }
+
+@media (max-width: 600px) {
+  .crazy-events {
+    display: flex !important;
+    flex-direction: column !important;
+    .btn {
+      width: 92% !important;
+    }
+  }
+  .trending-container {
+    margin-top: 20px;
+    flex-direction: column;
+    .title-container {
+      width: 62%;
+    }
+  }
+}

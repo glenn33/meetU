@@ -51,23 +51,23 @@ user9 = user9.profile_picture.attach(io: file, filename: "face.jpg", content_typ
 
 puts "Creating categories"
 
-Category.create(name: "Outdoor", picture: "https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80")
+Category.create(name: "Outdoor", picture: "https://images.unsplash.com/photo-1499803270242-467f7311582d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80")
 # file = URI.open() # use cloudinary url
 # category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
-Category.create(name: "Study groups", picture: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=763&q=80")
+Category.create(name: "Study groups", picture: "https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80")
 # file = URI.open() # use cloudinary url
 # category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
-Category.create(name: "Sports", picture: "https://images.unsplash.com/photo-1607962837359-5e7e89f86776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" )
+Category.create(name: "Sports", picture: "https://images.unsplash.com/photo-1598399615261-adafbbb044fc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" )
 # file = URI.open() # use cloudinary url
 # category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
-Category.create(name: "Hobbies", picture: "https://images.unsplash.com/photo-1621112904887-419379ce6824?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80")
+Category.create(name: "Hobbies", picture: "https://images.unsplash.com/photo-1578667343051-ff8c81d04408?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
 # file = URI.open() # use cloudinary url
 # category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 
-Category.create(name: "Politics", picture: "https://images.unsplash.com/photo-1508766917616-d22f3f1eea14?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80")
+Category.create(name: "Politics", picture: "https://images.unsplash.com/photo-1558403194-611308249627?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
 # file = URI.open() # use cloudinary url
 # category1 = category1.picture.attach(io: file, filename: "face.jpg", content_type: "image/jpg")
 

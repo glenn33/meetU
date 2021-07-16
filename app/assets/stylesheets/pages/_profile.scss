@@ -36,8 +36,8 @@
   margin-top: 70px;
   margin-left: 35px;
   margin-right: 35px;
-  align-items: flex-end;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .profile-body-container {
@@ -47,8 +47,11 @@
 
 .left-info{
   width: 50%;
-  min-height: 140px;
+  min-height: 146px;
   border-right: 1px solid rgb(221, 221, 221);
+}
+.profile-stats {
+  width: 40%;
 }
 
 //MEDIA-----------------------------------------------------
@@ -81,9 +84,11 @@
       border-bottom: 1px solid rgb(221, 221, 221);
       border-right: 0;
       width: 100%;
+      padding-bottom: 12px;
     }
     .profile-stats {
       margin-top: 28px;
+      width: 100%;
     }
   }
 }

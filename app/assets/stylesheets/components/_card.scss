@@ -98,15 +98,14 @@ a:hover {
 // card my_events
 
 .events-card {
-  display: block;
+  display: flex;
   top: 0px;
   position: relative;
   width: 90%;
   background-color: #c4e4db;
   border-radius: 10px;
   padding: 20px 20px;
-  margin: 12px;
-  margin-left: 0;
+  margin-top: 12px;
   text-decoration: none;
   z-index: 0;
   overflow: hidden;
@@ -253,6 +252,13 @@ a:hover {
   }
   .bookings-container {
     grid-template-columns: 1fr !important;
+  }
+  .event-and-form-container {
+    flex-direction: column;
+    margin-inline: 0 !important;
+    .events-card {
+      width: 100%;
+    }
   }
 }
 

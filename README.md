@@ -1,1 +1,2 @@
-
+Hi! This is meetU, a web application that we build in two weeks with the idea of connecting strangers who share interests, passions, hobbies, where anyone can join or propose an event for free!
+Website: https://www.meetu.one/
